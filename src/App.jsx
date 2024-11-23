@@ -42,7 +42,7 @@ export default function App() {
             start: "0% 0%",
           },
         })
-        .to(img.current, { transform: "translateZ(2800px)" })
+        .to(img.current, { transform: "translateZ(2900px)" })
         .to(text1.current, { y: -550 }, 0.05, "<")
         .to(text2.current, { y: -800 }, 0.03, "<")
         .fromTo(
@@ -57,28 +57,23 @@ export default function App() {
 
   return (
     <>
-      <div className="relative">
-        <div
-          ref={bg1}
-          className="bg bg-[#141414] absolute h-[80vh] w-screen z-[-2]"
-        ></div>
-
+      <div ref={bg1} className="relative">
         <section>
           <div
             ref={img_container}
             className="img-container perspective flex h-screen items-center justify-center"
           >
             <img ref={img} className="image" src={bg} alt="Background Image" />
-            <div className="text-white absolute flex flex-col items-center justify-center">
+            <div className="font-Kalina text-white absolute flex flex-col items-center justify-center">
               <h1
                 ref={text1}
-                className="text-[40px] md:text-[180px] text-center"
+                className="text-[40px] font-semibold md:text-[130px] text-center"
               >
                 <span className="text-stroke">SR</span> Constructions
               </h1>
               <p
                 ref={text2}
-                className="opacity-50 w-48 text-[12px] md:text-[16px] text-center px-4"
+                className="opacity-50 w-48 text-[10px] md:text-[12px] text-center px-4"
               >
                 Building Dreams, Crafting Excellence.
               </p>
