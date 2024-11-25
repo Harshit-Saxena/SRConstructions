@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -19,12 +19,34 @@ body {
 
   .text-stroke {
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: white;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ea481f;
+    -webkit-text-stroke-width: 4px;
   }
 
   .perspective {
-    perspective: 2200px;
+    perspective: 1000px;
+  }
+
+  .about-text {
+    & p {
+      background: linear-gradient(
+        to right,
+        rgb(255, 255, 255) 50%,
+        rgb(37, 37, 37) 50%
+      );
+      background-size: 200% 100%;
+      background-position-x: 100%;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+  }
+
+  .mask {
+    -webkit-mask-image: url(./assets/maskImage.png);
+    -webkit-mask-position: right;
+    -webkit-mask-size: 100% 150%;
+    height: 100%;
   }
 
   /* Mobile-specific adjustments */

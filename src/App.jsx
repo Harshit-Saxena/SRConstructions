@@ -7,6 +7,8 @@ import img3 from "./assets/img3.jpg"
 import img4 from "./assets/img4.jpg"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { AboutUs } from "./components/AboutUs"
+import { Services } from "./components/Services"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -19,6 +21,7 @@ export default function App() {
   const container = useRef(null)
 
   useLayoutEffect(() => {
+    const isMobile = window.innerWidth <= 768
     let ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: bg.current,
@@ -30,7 +33,7 @@ export default function App() {
       })
 
       gsap.set(container.current, {
-        marginTop: -container.current.offsetHeight,
+        marginTop: -container.current.offsetHeight * (isMobile ? 7.5 : 1),
       })
 
       gsap
@@ -43,8 +46,8 @@ export default function App() {
           },
         })
         .to(img.current, { transform: "translateZ(2900px)" })
-        .to(text1.current, { y: -550 }, 0.05, "<")
-        .to(text2.current, { y: -800 }, 0.03, "<")
+        .to(text1.current, { y: -550 }, 0.02, "<")
+        .to(text2.current, { y: -800, opacity: 0 }, 0.01, "<")
         .fromTo(
           container.current,
           { yPercent: 100, scaleY: 3 },
@@ -64,18 +67,24 @@ export default function App() {
             className="img-container perspective flex h-screen items-center justify-center"
           >
             <img ref={img} className="image" src={bg} alt="Background Image" />
-            <div className="font-Kalina text-white absolute flex flex-col items-center justify-center">
+            <div className="font-Kalina absolute flex flex-col items-center justify-center">
               <h1
                 ref={text1}
-                className="text-[40px] font-semibold md:text-[130px] text-center"
+                className="text-[40px] text-highlight font-semibold md:text-[130px] text-center z-[999]"
               >
                 <span className="text-stroke">SR</span> Constructions
               </h1>
               <p
                 ref={text2}
-                className="opacity-50 w-48 text-[10px] md:text-[12px] text-center px-4"
+                className="opacity-50 text-desc w-48 text-[10px] md:text-[12px] text-center px-4"
               >
                 Building Dreams, Crafting Excellence.
+                <button
+                  disabled
+                  className="mt-4 text-xs bg-gray-600 px-4 py-2 rounded-full animate-pulse"
+                >
+                  scroll down
+                </button>
               </p>
             </div>
           </div>
@@ -96,7 +105,7 @@ export default function App() {
                 alt="Image2"
               />
             </div>
-            <div className="col-2 flex flex-col gap-8 md:gap-16">
+            <div className="col-2 flex flex-col gap-8 md:gap-16 last">
               <img
                 className="w-full md:w-[600px] h-auto md:h-[400px]"
                 src={img3}
@@ -109,6 +118,10 @@ export default function App() {
               />
             </div>
           </div>
+
+          <AboutUs />
+
+          <Services />
         </section>
       </div>
     </>
