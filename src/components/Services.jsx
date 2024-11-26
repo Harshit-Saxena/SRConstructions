@@ -1,147 +1,120 @@
-import { useRef, useLayoutEffect } from "react"
-import img1 from "../assets/img1.jpg"
-import img2 from "../assets/img2.jpg"
-import img3 from "../assets/img3.jpg"
-import img4 from "../assets/img4.jpg"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { motion } from "framer-motion"
+import animation from "../animation"
 
-gsap.registerPlugin(ScrollTrigger)
-
-export const Services = () => {
-  const services = useRef()
-  const panel = useRef([])
-
-  panel.current = []
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // causing problems with landing page animation
-      //   ScrollTrigger.defaults({
-      //     toggleActions: "restart pause resume reset",
-      //     scroller: services.current,
-      //   })
-
-      gsap.utils.toArray(panel.current).forEach((panel, idx) => {
-        gsap.to(panel, {
-          backgroundPosition: "-100px",
-          duration: 1.4,
-          scrollTrigger: {
-            trigger: panel,
-            toggleActions: "play reverse play reverse",
-            scroller: services.current,
-          },
-        })
-
-        // Bullet scaling animation
-        const bullet = document.querySelector(`.bullet-${idx + 1}`)
-        if (bullet) {
-          gsap.to(bullet, {
-            scale: 1.8,
-            duration: 0.6,
-            scrollTrigger: {
-              trigger: panel,
-              toggleActions: "play reverse play reverse",
-              scroller: services.current, // Ensure scroller is correctly set
-            },
-          })
-        }
-      })
-    })
-
-    return () => ctx.revert()
-  }, [])
-
-  const slides = [
-    {
-      title: "Architectural Design and Planning",
-      color: "text-red-400",
-      img: img1,
-    },
-    {
-      title: "Building Permits and Approvals",
-      color: "text-orange-400",
-      img: img2,
-    },
-    {
-      title: "Site Preparation and Excavation",
-      color: "text-blue-400",
-      img: img3,
-    },
-    {
-      title: "Foundation and Framing",
-      color: "text-green-400",
-      img: img4,
-    },
-    // {
-    //   title: "Plumbing and Electrical Work",
-    //   color: "text-red-400",
-    //   //   img: img_5,
-    // },
-    // {
-    //   title: "Flooring and Painting",
-    //   color: "text-red-400",
-    //   //   img: img_6,
-    // },
-    // {
-    //   title: "Roofing and Siding",
-    //   color: "text-red-400",
-    //   //   img: img_7,
-    // },
-    // {
-    //   title: "Landscaping and Fencing",
-    //   color: "text-red-400",
-    //   //   img: img_8,
-    // },
-  ]
-
-  const addToRef = (el) => {
-    if (el && !panel.current.includes(el)) {
-      panel.current.push(el)
-    }
-  }
-
+const Services = () => {
   return (
-    <div
-      ref={services}
-      className="max-h-screen lg:mt-24 lg:px-12 overflow-y-scroll snap-y snap-mandatory"
-    >
-      <div className="absolute w-[10%] gap-12 flex flex-col justify-center h-screen">
-        {slides.map((bullet, idx) => {
-          return (
-            <img
-              key={idx}
-              src={bullet.img}
-              className={`bullet-${
-                idx + 1
-              } w-12 h-12 rounded-full object-cover`}
-              alt="Service Image"
-            />
-          )
-        })}
+    <section className="px-4 py-12">
+      <div className="mx-auto w-fit">
+        <Card />
       </div>
-
-      {slides.map((slide, idx) => {
-        return (
-          <section key={idx} className="h-screen text-white flex snap-start">
-            <div className="w-[40%] leading-8 flex flex-col items-center justify-center h-full">
-              <h2 className={`${slide.color} lg:text-[2rem]`}>{slide.title}</h2>
-            </div>
-            <div className="w-[60%]">
-              <div
-                ref={addToRef}
-                className="mask"
-                style={{
-                  backgroundImage: `url(${slide.img})`,
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                  height: "80%",
-                }}
-              ></div>
-            </div>
-          </section>
-        )
-      })}
-    </div>
+    </section>
   )
 }
+
+const Card = () => {
+  return (
+    <motion.div
+      whileHover="hover"
+      transition={{
+        duration: 1,
+        ease: "backInOut",
+      }}
+      variants={{
+        hover: {
+          scale: 1.05,
+        },
+      }}
+      className="relative h-96 w-80 shrink-0 overflow-hidden rounded-xl bg-indigo-500 p-8"
+    >
+      <div className="relative z-10 text-white">
+        <span className="mb-3 block w-fit rounded-full bg-white/30 px-3 py-0.5 text-sm font-light text-white">
+          Pro
+        </span>
+        <motion.span
+          initial={{ scale: 0.85 }}
+          variants={{
+            hover: {
+              scale: 1,
+            },
+          }}
+          transition={{
+            duration: 1,
+            ease: "backInOut",
+          }}
+          className="my-2 block origin-top-left font-mono text-6xl font-black leading-[1.2]"
+        >
+          $299/
+          <br />
+          Month
+        </motion.span>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, rem.
+        </p>
+      </div>
+      <button className="absolute bottom-4 left-4 right-4 z-20 rounded border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur transition-colors hover:bg-white/30 hover:text-white">
+        Get it now
+      </button>
+      <Background />
+    </motion.div>
+  )
+}
+
+const Background = () => {
+  return (
+    <motion.svg
+      width="320"
+      height="384"
+      viewBox="0 0 320 384"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="absolute inset-0 z-0"
+      variants={{
+        hover: {
+          scale: 1.5,
+        },
+      }}
+      transition={{
+        duration: 1,
+        ease: "backInOut",
+      }}
+    >
+      <motion.circle
+        variants={{
+          hover: {
+            scaleY: 0.5,
+            y: -25,
+          },
+        }}
+        transition={{
+          duration: 1,
+          ease: "backInOut",
+          delay: 0.2,
+        }}
+        cx="160.5"
+        cy="114.5"
+        r="101.5"
+        fill="#262626"
+      />
+      <motion.ellipse
+        variants={{
+          hover: {
+            scaleY: 2.25,
+            y: -25,
+          },
+        }}
+        transition={{
+          duration: 1,
+          ease: "backInOut",
+          delay: 0.2,
+        }}
+        cx="160.5"
+        cy="265.5"
+        rx="101.5"
+        ry="43.5"
+        fill="#262626"
+      />
+    </motion.svg>
+  )
+}
+
+export default animation(Services)

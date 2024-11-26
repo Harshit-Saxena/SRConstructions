@@ -4,8 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        highlight: "#ea481f",
-        desc: "#e9eaec",
+        highlight: "#214e34",
+        desc: "#1c0f13",
+        boldClr: "#ea481f",
+        bgClr: "#e9eaec",
       },
       fontFamily: {
         Kalina: "Kalnia",

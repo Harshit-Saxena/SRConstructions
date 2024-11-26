@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  overflow-x: hidden;
-  background: #141414;
-}
-
 @layer components {
   .image {
     -webkit-mask-image: url(./assets/o.png);
@@ -19,7 +14,7 @@ body {
 
   .text-stroke {
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #ea481f;
+    -webkit-text-stroke-color: #214e34;
     -webkit-text-stroke-width: 4px;
   }
 
@@ -49,6 +44,11 @@ body {
     height: 100%;
   }
 
+  .scrollDiv {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
   /* Mobile-specific adjustments */
   @media (max-width: 768px) {
     .image {
@@ -59,7 +59,7 @@ body {
 
     .text-stroke {
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke-color: white;
+      -webkit-text-stroke-color: #214e34;
       -webkit-text-stroke-width: 1.5px;
     }
   }
