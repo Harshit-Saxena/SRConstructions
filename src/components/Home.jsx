@@ -6,9 +6,16 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import centerImage from "../assets/centerImage.jpg"
+import permits from "../assets/permits.jpg"
+import foundation from "../assets/foundation.jpg"
+import excavation from "../assets/excavation.jpg"
+import fencing from "../assets/fencing.jpg"
+import founder_img from "../assets/Founder.png"
 import { FiArrowUpRight } from "react-icons/fi"
+import { Number } from "./Number"
+import { Link } from "react-router-dom"
 
 export const Home = () => {
   return (
@@ -17,13 +24,15 @@ export const Home = () => {
         root
         options={{
           lerp: 0.05,
-          //   infinite: true,
-          //   syncTouch: true,
+          // infinite: true,
+          syncTouch: true,
         }}
       >
-        <Hero />
+        <ShuffleHero />
 
         <About />
+
+        <Stats />
 
         <Service />
 
@@ -33,118 +42,318 @@ export const Home = () => {
   )
 }
 
-const isSmallerScreen = window.innerWidth <= 768
-
-const SECTION_HEIGHT = 1500
-
-const Hero = () => {
+const ShuffleHero = () => {
   return (
-    <div
-      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
-      className="relative w-full"
-    >
-      <CenterImage />
+    <section className="w-full h-screen px-8 py-24 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+      <div>
+        <span className="block mb-4 text-sm md:text-md text-highlight font-medium">
+          Better every day
+        </span>
 
-      <ParallaxImages />
+        <h3 className="text-4xl md:text-6xl font-semibold text-boldClr">
+          Let's make your dream come true
+        </h3>
 
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
-    </div>
+        <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
+          We don't just build structures, we build trust and long-lasting
+          relationships
+        </p>
+
+        <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
+          <Link to="/contact">Get in touch</Link>
+        </button>
+      </div>
+
+      <ShuffleGrid />
+    </section>
   )
 }
 
-const CenterImage = () => {
-  const { scrollY } = useScroll()
+const shuffle = (array) => {
+  let currentIndex = array.length,
+    randomIndex
 
-  const clip1 = useTransform(scrollY, [0, 1500], [25, 0])
-  const clip2 = useTransform(scrollY, [0, 1500], [75, 100])
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex)
 
-  const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`
+    currentIndex--
+    ;[array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
 
-  const backgroundSize = useTransform(
-    scrollY,
-    [0, SECTION_HEIGHT + 500],
-    ["170%", "100%"]
-  )
-  const opacity = useTransform(
-    scrollY,
-    [SECTION_HEIGHT, SECTION_HEIGHT + 500],
-    [1, 0]
-  )
+      array[currentIndex],
+    ]
+  }
 
-  return (
+  return array
+}
+
+const squareData = [
+  {
+    id: 1,
+
+    src:
+      "https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+  },
+
+  {
+    id: 2,
+
+    src:
+      "https://images.unsplash.com/photo-1510925758641-869d353cecc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+  },
+
+  {
+    id: 3,
+
+    src:
+      "https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+  },
+
+  {
+    id: 4,
+
+    src:
+      "https://images.unsplash.com/photo-1580238053495-b9720401fd45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+  },
+
+  {
+    id: 5,
+
+    src:
+      "https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80",
+  },
+
+  {
+    id: 6,
+
+    src:
+      "https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+  },
+
+  {
+    id: 7,
+
+    src:
+      "https://images.unsplash.com/photo-1599586120429-48281b6f0ece?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+  },
+
+  {
+    id: 8,
+
+    src:
+      "https://plus.unsplash.com/premium_photo-1671436824833-91c0741e89c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+  },
+
+  {
+    id: 9,
+
+    src:
+      "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+  },
+
+  {
+    id: 10,
+
+    src:
+      "https://images.unsplash.com/photo-1610768764270-790fbec18178?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+  },
+
+  {
+    id: 11,
+
+    src:
+      "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80",
+  },
+
+  {
+    id: 12,
+
+    src:
+      "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=882&q=80",
+  },
+
+  {
+    id: 13,
+
+    src:
+      "https://images.unsplash.com/photo-1560089000-7433a4ebbd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  },
+
+  {
+    id: 14,
+
+    src:
+      "https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
+  },
+
+  {
+    id: 15,
+
+    src:
+      "https://images.unsplash.com/photo-1606244864456-8bee63fce472?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=681&q=80",
+  },
+
+  {
+    id: 16,
+
+    src:
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1820&q=80",
+  },
+]
+
+const generateSquares = () => {
+  return shuffle(squareData).map((sq) => (
     <motion.div
-      className="sticky top-0 h-screen w-full"
+      key={sq.id}
+      layout
+      transition={{ duration: 1.5, type: "spring" }}
+      className="w-full h-full"
       style={{
-        clipPath,
-        backgroundSize,
-        opacity,
-        backgroundImage: `url(${centerImage})`,
-        backgroundPosition: isSmallerScreen ? "center" : "bottom",
-        backgroundRepeat: "no-repeat",
+        backgroundImage: `url(${sq.src})`,
+
+        backgroundSize: "cover",
       }}
-    />
-  )
+    ></motion.div>
+  ))
 }
 
-const ParallaxImages = () => {
+const ShuffleGrid = () => {
+  const timeoutRef = useRef(null)
+
+  const [squares, setSquares] = useState(generateSquares())
+
+  useEffect(() => {
+    shuffleSquares()
+
+    return () => clearTimeout(timeoutRef.current)
+  }, [])
+
+  const shuffleSquares = () => {
+    setSquares(generateSquares())
+
+    timeoutRef.current = setTimeout(shuffleSquares, 3000)
+  }
+
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
-      <ParallaxImg
-        src="https://images.unsplash.com/photo-1484600899469-230e8d1d59c0?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="And example of a space launch"
-        start={-200}
-        end={200}
-        className="w-1/3"
-      />
-      <ParallaxImg
-        src="https://images.unsplash.com/photo-1446776709462-d6b525c57bd3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="An example of a space launch"
-        start={200}
-        end={-250}
-        className="mx-auto w-2/3"
-      />
-      <ParallaxImg
-        src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Orbiting satellite"
-        start={-200}
-        end={200}
-        className="ml-auto w-1/3"
-      />
-      <ParallaxImg
-        src="https://images.unsplash.com/photo-1494022299300-899b96e49893?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Orbiting satellite"
-        start={0}
-        end={-500}
-        className="ml-24 w-5/12"
-      />
+    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+      {squares.map((sq) => sq)}
     </div>
   )
 }
 
-const ParallaxImg = ({ className, alt, src, start, end }) => {
-  const ref = useRef(null)
+// Parallax Image code
+// const isSmallerScreen = window.innerWidth <= 768
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: [`${start}px end`, `end ${end * -1}px`],
-  })
+// const SECTION_HEIGHT = 1500
 
-  const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0])
-  const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85])
+// const Hero = () => {
+//   return (
+//     <div
+//       style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
+//       className="relative w-full"
+//     >
+//       <CenterImage />
 
-  const y = useTransform(scrollYProgress, [0, 1], [start, end])
-  const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`
+//       <ParallaxImages />
 
-  return (
-    <motion.img
-      src={src}
-      alt={alt}
-      className={className}
-      ref={ref}
-      style={{ transform, opacity }}
-    />
-  )
-}
+//       <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
+//     </div>
+//   )
+// }
+
+// const CenterImage = () => {
+//   const { scrollY } = useScroll()
+
+//   const clip1 = useTransform(scrollY, [0, 1500], [25, 0])
+//   const clip2 = useTransform(scrollY, [0, 1500], [75, 100])
+
+//   const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`
+
+//   const backgroundSize = useTransform(
+//     scrollY,
+//     [0, SECTION_HEIGHT + 500],
+//     ["170%", "100%"]
+//   )
+//   const opacity = useTransform(
+//     scrollY,
+//     [SECTION_HEIGHT, SECTION_HEIGHT + 500],
+//     [1, 0]
+//   )
+
+//   return (
+//     <motion.div
+//       className="sticky top-0 h-screen w-full"
+//       style={{
+//         clipPath,
+//         backgroundSize,
+//         opacity,
+//         backgroundImage: `url(${centerImage})`,
+//         backgroundPosition: isSmallerScreen ? "center" : "bottom",
+//         backgroundRepeat: "no-repeat",
+//       }}
+//     />
+//   )
+// }
+
+// const ParallaxImages = () => {
+//   return (
+//     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
+//       <ParallaxImg
+//         src="https://images.unsplash.com/photo-1694521787162-5373b598945c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29uc3RydWN0aW9uJTIwd29ya2Vyc3xlbnwwfHwwfHx8MA%3D%3D"
+//         alt="And example of a space launch"
+//         start={-200}
+//         end={200}
+//         className="w-1/3"
+//       />
+//       <ParallaxImg
+//         src="https://images.unsplash.com/photo-1694521788304-1d42378498da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbnN0cnVjdGlvbiUyMHdvcmtlcnN8ZW58MHx8MHx8fDA%3D"
+//         alt="An example of a space launch"
+//         start={200}
+//         end={-250}
+//         className="mx-auto w-2/3"
+//       />
+//       <ParallaxImg
+//         src="https://plus.unsplash.com/premium_photo-1682724032935-1d51a298c402?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGNvbnN0cnVjdGlvbiUyMHdvcmtlcnN8ZW58MHx8MHx8fDA%3D"
+//         alt="Orbiting satellite"
+//         start={-200}
+//         end={200}
+//         className="ml-auto w-1/3"
+//       />
+//       <ParallaxImg
+//         src="https://images.unsplash.com/photo-1710585761854-57ff6839395c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGNvbnN0cnVjdGlvbiUyMHdvcmtlcnN8ZW58MHx8MHx8fDA%3D"
+//         alt="Orbiting satellite"
+//         start={0}
+//         end={-500}
+//         className="ml-24 w-5/12"
+//       />
+//     </div>
+//   )
+// }
+
+// const ParallaxImg = ({ className, alt, src, start, end }) => {
+//   const ref = useRef(null)
+
+//   const { scrollYProgress } = useScroll({
+//     target: ref,
+//     offset: [`${start}px end`, `end ${end * -1}px`],
+//   })
+
+//   const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0])
+//   const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85])
+
+//   const y = useTransform(scrollYProgress, [0, 1], [start, end])
+//   const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`
+
+//   return (
+//     <motion.img
+//       src={src}
+//       alt={alt}
+//       className={className}
+//       ref={ref}
+//       style={{ transform, opacity }}
+//     />
+//   )
+// }
 
 // About us section
 const About = () => {
@@ -154,14 +363,14 @@ const About = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5, // Delay between animations of children
+        staggerChildren: 0.3, // Delay between animations of children
       },
     },
   }
 
   const childVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   }
   return (
     <motion.div
@@ -178,7 +387,7 @@ const About = () => {
         Who we are
       </h2>
 
-      <span className="font-semibold text-2xl lg:text-5xl border-l-2 border-boldClr pl-2">
+      <span className="font-semibold text-highlight text-2xl lg:text-5xl border-l-2 border-boldClr pl-2">
         Focused and Future Ready
       </span>
       <motion.div className="lg:text-xl flex flex-col gap-2">
@@ -208,30 +417,57 @@ const About = () => {
   )
 }
 
+// Stats section
+const Stats = () => {
+  return (
+    <div className="flex flex-col gap-12 p-4">
+      <h3 className="text-3xl lg:text-4xl text-center text-highlight">
+        Lorem ipsum dolor sit amet{" "}
+        <span className="font-semibold">Lorem Ipsum</span>{" "}
+      </h3>
+
+      <div className="flex flex-col md:flex-row justify-evenly items-center divide-y-2 md:divide-y-0 md:divide-x-2 divide-black">
+        <div className="flex flex-col gap-2 items-center justify-center lg:w-full">
+          <Number n={100} extra="+" />
+          <p className="pb-2 font-Kalina text-xs text-neutral-500">Projects Completed</p>
+        </div>
+        <div className="flex flex-col gap-2 items-center px-8 py-2 lg:w-full">
+          <Number n={100} extra="%" />
+          <p className="pb-2 font-Kalina text-xs text-neutral-500">Clients Statisfied</p>
+        </div>
+        <div className="flex flex-col gap-2 items-center px-8 py-2 lg:w-full">
+          <Number n={100} extra="+" />
+          <p className="pb-2 font-Kalina text-xs text-neutral-500">Lorem Ipsum</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // Service section
 const Service = () => {
   // Data for services
   const services = {
     Permits: {
-      image: "path-to-permits-image.jpg",
+      image: permits,
       title: "Simplifying Permits",
       description:
         "We handle all the paperwork and permits required to get your project moving without delays.",
     },
     Foundation: {
-      image: "path-to-foundation-image.jpg",
+      image: foundation,
       title: "Solid Foundations",
       description:
         "Building a strong foundation is crucial, and we ensure it’s done with precision and care.",
     },
     Excavation: {
-      image: "path-to-excavation-image.jpg",
+      image: excavation,
       title: "Expert Excavation",
       description:
         "Our excavation services are carried out with advanced equipment and skilled professionals.",
     },
     Landscaping: {
-      image: "path-to-landscaping-image.jpg",
+      image: fencing,
       title: "Beautiful Landscaping",
       description:
         "Transform your outdoor spaces with our creative and sustainable landscaping solutions.",
@@ -271,21 +507,48 @@ const Service = () => {
         What we do
       </h2>
 
-      <span className="font-semibold text-2xl lg:text-5xl border-l-2 border-boldClr pl-2">
+      <span className="font-semibold text-highlight text-2xl lg:text-5xl border-l-2 border-boldClr pl-2">
         We have a vision for the future of construction
       </span>
+
+      <motion.div
+        variants={childVariants}
+        className="lg:text-xl flex flex-col gap-2"
+      >
+        {[
+          "With hundreds of successfully completed projects across the country, our portfolio includes everything from large industries and office buildings to small apartments",
+          "Our satisfied clients stand as a testament to our commitment to quality and professionalism.",
+          "We are proud recipients of numerous awards and recognitions from industry associations for our excellence and innovative approach",
+        ].map((text, idx) => (
+          <motion.p
+            key={idx}
+            className="text-neutral-600 last:text-neutral-900 last:font-semibold"
+            variants={childVariants}
+          >
+            {text}
+          </motion.p>
+        ))}
+      </motion.div>
+
+      <motion.q
+        className="font-semibold border-l-2 italic border-red-300 pl-4 lg:text-xl"
+        variants={childVariants}
+      >
+        No project is too big or too small for us. We're here to turn your
+        dreams into reality.
+      </motion.q>
 
       <div className="py-6">
         {/* Buttons to change content */}
         <div className="flex flex-col gap-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:max-w-[50%] gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:max-w-[70%] gap-6">
             {Object.keys(services).map((service) => (
               <button
                 key={service}
                 onClick={() => setSelectedService(service)}
                 className={`bg-transparent lg:text-lg pb-2 ${
                   selectedService === service
-                    ? "text-highlight border-b-2 border-highlight"
+                    ? "text-boldClr border-b-2 border-boldClr"
                     : "text-neutral-500"
                 }`}
               >
@@ -295,7 +558,7 @@ const Service = () => {
           </div>
 
           <motion.div
-            className="flex flex-col lg:flex-row justify-between gap-4 px-6 mt-6"
+            className="flex flex-col lg:flex-row justify-between gap-4 lg:gap-24 p-6 mt-6"
             initial={{ translateX: "-100vw", opacity: 0 }}
             animate={{ translateX: "0vw", opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -305,18 +568,18 @@ const Service = () => {
             <motion.img
               src={services[selectedService].image}
               alt={`${selectedService} Image`}
-              className="w-full lg:w-1/2 h-auto object-cover rounded"
+              className="w-full lg:w-1/2 h-[20rem] lg:h-[40rem] object-cover rounded"
             />
 
             {/* Text content */}
-            <motion.div className="flex flex-col gap-4 lg:w-1/2">
-              <h3 className="text-3xl font-bold">
+            <motion.div className="flex flex-col flex-1 gap-4 lg:w-1/2">
+              <h3 className="text-3xl lg:text-5xl font-bold">
                 {services[selectedService].title}
               </h3>
-              <p className="text-lg text-neutral-700">
+              <p className="text-lg lg:text-2xl text-neutral-700">
                 {services[selectedService].description}
               </p>
-              <button className="rounded bg-neutral-900 px-4 py-1 text-md text-white transition-colors hover:bg-neutral-700 w-fit">
+              <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-boldClr w-fit">
                 <a href="/contact">
                   Learn more <FiArrowUpRight className="inline" />
                 </a>
@@ -366,12 +629,12 @@ const Founder = () => {
         variants={childVariants}
         className="flex flex-col gap-8 lg:gap-24 lg:flex-row"
       >
-        <span className="font-semibold text-2xl h-fit lg:text-3xl lg:whitespace-nowrap border-l-2 pl-2 border-boldClr">
+        <span className="font-semibold text-highlight text-2xl h-fit lg:text-3xl lg:whitespace-nowrap border-l-2 pl-2 border-boldClr">
           Vision to make dreams come true
         </span>
         <motion.div
           variants={childVariants}
-          className="lg:text-md flex flex-col gap-2"
+          className="lg:text-md flex flex-col gap-4"
         >
           {[
             "Mr. Rajbeer Singh, the founder, is a distinguished civil engineer who graduated with honors from Roorkee, Uttarakhand, in 1988.",
@@ -382,13 +645,12 @@ const Founder = () => {
               variants={childVariants}
               key={idx}
               className="text-neutral-600 last:text-neutral-900 last:font-semibold"
-              variants={childVariants}
             >
               {text}
             </motion.p>
           ))}
 
-          <button className="rounded bg-neutral-900 px-4 py-1 text-md text-white transition-colors hover:bg-neutral-700 w-fit">
+          <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-boldClr w-fit">
             <a href="/contact">
               Learn more <FiArrowUpRight className="inline" />
             </a>
@@ -396,8 +658,8 @@ const Founder = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="bg-gray-200 border-2 border-black lg:border-0 rounded-lg overflow-hidden flex flex-col lg:flex-row-reverse gap-6 p-4 lg:py-12 lg:pl-36">
-        <motion.img src="" alt="Founder (Rajbeer)" />
+      <motion.div className="bg-gray-300 rounded-md overflow-hidden flex flex-col lg:flex-row-reverse gap-6 p-4 py-6 lg:py-12 lg:pl-36">
+        <motion.img src={founder_img} alt="Founder (Rajbeer)" />
 
         <motion.div className="text-neutral-900 flex flex-col gap-4">
           <h4 className="text-3xl lg:text-4xl font-semibold">Rajbeer Singh</h4>

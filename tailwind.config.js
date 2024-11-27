@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        highlight: "#214e34",
+        highlight: "#71B706",
         desc: "#1c0f13",
         boldClr: "#ea481f",
         bgClr: "#e9eaec",

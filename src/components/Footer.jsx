@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom"
-// import logo from "../assets/images/BF_logo.png"
+import footer_logo from "../assets/footer_logo.svg"
 // import JD from "../assets/svg/JD.svg"
 // import Google from "../assets/svg/Google.svg"
 // import Facebook from "../assets/svg/Facebook.svg"
 // import Instagram from "../assets/svg/Instagram.svg"
-// import Tooltip from "@mui/material/Tooltip"
-// import call from "../assets/svg/call.svg"
-// import email from "../assets/svg/email.svg"
-// import location from "../assets/svg/location.svg"
+import Tooltip from "@mui/material/Tooltip"
+import call from "../assets/call.svg"
+import email from "../assets/email.svg"
+import location from "../assets/location.svg"
 import { Details } from "./Details"
 
 export const Footer = () => {
@@ -15,22 +15,22 @@ export const Footer = () => {
 
   const details = [
     {
-      //   src: location,
-      detail: " ",
+      src: location,
+      detail: "House no. 253, Amravati Enclave,Surajpur, Shimla-Kalka Highway",
       className: "w-6 text-primary-purple",
       href: "https://maps.app.goo.gl/5vvCMqU7K3SHzynB6",
     },
     {
-      //   src: email,
-      detail: "srConstructions@gmail.com",
-      className: "text-primary-purple",
-      href: "mailto:srConstructions@gmail.com",
+      src: email,
+      detail: "Srconstructions253@gmail.com",
+      className: "w-6 wtext-primary-purple",
+      href: "mailto:Srconstructions253@gmail.com",
     },
     {
-      //   src: call,
-      detail: "+91 7087080786",
-      className: "text-primary-purple",
-      href: "tel:+1234567890",
+      src: call,
+      detail: "+91 99152-84762",
+      className: "w-6 wtext-primary-purple",
+      href: "tel:+9915284762",
     },
   ]
 
@@ -45,8 +45,8 @@ export const Footer = () => {
             <Link to={"/"}>
               <img
                 loading="lazy"
-                className="w-24 lg:w-36"
-                // src={logo}
+                className="w-12 lg:w-14"
+                src={footer_logo}
                 alt="SR Constructions"
               />
             </Link>
@@ -56,26 +56,26 @@ export const Footer = () => {
           {/* socials */}
           <div className="flex gap-6 justify-between">
             <div className="flex gap-6">
-              {/* <Tooltip title="Just Dial" arrow> */}
-              <a href="" target="_blank">
-                <img loading="lazy" alt="Just Dial" />
-              </a>
-              {/* </Tooltip> */}
-              {/* <Tooltip title="Instagram" arrow> */}
-              <a href="" target="_blank">
-                <img loading="lazy" alt="Instagram" />
-              </a>
-              {/* </Tooltip> */}
-              {/* <Tooltip title="Facebook" arrow> */}
-              <a href="" target="_blank">
-                <img loading="lazy" alt="Facebook" />
-              </a>
-              {/* </Tooltip> */}
-              {/* <Tooltip title="Google" arrow> */}
-              <a href="" target="_blank">
-                <img loading="lazy" alt="Google" />
-              </a>
-              {/* </Tooltip> */}
+              <Tooltip title="Just Dial" arrow>
+                <a href="" target="_blank">
+                  <img loading="lazy" alt="Just Dial" />
+                </a>
+              </Tooltip>
+              <Tooltip title="Instagram" arrow>
+                <a href="" target="_blank">
+                  <img loading="lazy" alt="Instagram" />
+                </a>
+              </Tooltip>
+              <Tooltip title="Facebook" arrow>
+                <a href="" target="_blank">
+                  <img loading="lazy" alt="Facebook" />
+                </a>
+              </Tooltip>
+              <Tooltip title="Google" arrow>
+                <a href="" target="_blank">
+                  <img loading="lazy" alt="Google" />
+                </a>
+              </Tooltip>
             </div>
           </div>
         </div>
@@ -88,48 +88,48 @@ export const Footer = () => {
           <div className="flex flex-row gap-8 text-neutral-800">
             <ul className="grid grid-cols-1 gap-4">
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
-                <Link to={"/real_estate"}>
+                <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-sm text-neutral-800">
                     Architectural Design and Planning
                   </li>
                 </Link>
-                <Link to={"/pvt_loan"}>
+                <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-sm text-neutral-800">
                     Building Permits and Approvals
                   </li>
                 </Link>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
-                <Link to={"/loan_property"}>
+                <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-sm text-neutral-800">
                     Site Preparation and Excavation
                   </li>
                 </Link>
-                <Link to={"/auto_loan"}>
+                <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-sm text-neutral-800">
                     Foundation and Framing
                   </li>
                 </Link>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
-                <Link to={"/micro_fund"}>
+                <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-sm text-neutral-800">
                     Plumbing and Electrical Work
                   </li>
                 </Link>
-                <Link to={"/funds"}>
+                <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-sm text-neutral-800">
                     Flooring and Painting
                   </li>
                 </Link>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
-                <Link to={"/loan_gold"}>
+                <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-sm text-neutral-800">
                     Roofing and Siding
                   </li>
                 </Link>
-                <Link to={"/edu_loan"}>
+                <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-sm text-neutral-800">
                     Landscaping and Fencing
                   </li>

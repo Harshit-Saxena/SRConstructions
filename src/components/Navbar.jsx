@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-// import logo from "../assets/images/BF_logo.png"
+import logo from "../assets/logo.svg"
 import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 
@@ -22,10 +22,11 @@ export const Navbar = () => {
             <Link to={"/"}>
               <img
                 loading="lazy"
-                className="w-10 lg:w-14"
-                // src={logo}
+                className="w-8 lg:w-10 inline"
+                src={logo}
                 alt="SR Constructions"
               />
+              <span className="text-xs font-bold text-highlight">S.R. Constructions</span>
             </Link>
           </div>
           {/* Menu Icons */}
