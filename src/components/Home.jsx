@@ -59,7 +59,7 @@ const ShuffleHero = () => {
           relationships
         </p>
 
-        <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
+        <button className="bg-dark text-white font-medium py-2 px-4 rounded transition-all active:scale-95">
           <Link to="/contact">Get in touch</Link>
         </button>
       </div>

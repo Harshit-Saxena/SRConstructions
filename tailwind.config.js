@@ -8,6 +8,7 @@ export default {
         desc: "#1c0f13",
         boldClr: "#ea481f",
         bgClr: "#e9eaec",
+        dark: "#214e34",
       },
       fontFamily: {
         Kalina: "Kalnia",
