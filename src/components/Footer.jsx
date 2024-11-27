@@ -18,7 +18,7 @@ export const Footer = () => {
       src: location,
       detail: "House no. 253, Amravati Enclave,Surajpur, Shimla-Kalka Highway",
       className: "w-6 text-primary-purple",
-      href: "https://maps.app.goo.gl/5vvCMqU7K3SHzynB6",
+      href: "https://maps.app.goo.gl/4VkJsiMQbHH9ceYV9",
     },
     {
       src: email,

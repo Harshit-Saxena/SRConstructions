@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { FiArrowUpRight } from "react-icons/fi"
 import { FiArrowRight } from "react-icons/fi"
 
-export const AboutUs = () => {
+const AboutUs = () => {
   return (
     <div className="bg-white" style={{ paddingTop: "130px" }}>
       <TextParallaxContent

@@ -17,7 +17,7 @@ import { FiArrowUpRight } from "react-icons/fi"
 import { Number } from "./Number"
 import { Link } from "react-router-dom"
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className="bg-bgClr flex flex-col gap-6">
       <ReactLenis
@@ -46,15 +46,15 @@ const ShuffleHero = () => {
   return (
     <section className="w-full lg:h-screen px-8 py-24 mb-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
-        <span className="block mb-4 text-sm md:text-md text-highlight font-medium">
+        <span className="block mb-4 text-base md:text-lg text-highlight font-medium">
           Better every day
         </span>
 
-        <h3 className="text-4xl md:text-6xl font-semibold text-boldClr">
+        <h3 className="text-5xl md:text-7xl font-semibold text-boldClr">
           Let's make your dream come true
         </h3>
 
-        <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
+        <p className="text-xl text-slate-700 my-4 md:my-6">
           We don't just build structures, we build trust and long-lasting
           relationships
         </p>
@@ -394,7 +394,7 @@ const Stats = () => {
 
       <div className="flex flex-col md:flex-row justify-evenly items-center divide-y-2 md:divide-y-0 md:divide-x-2 divide-black">
         <div className="flex flex-col gap-2 items-center justify-center lg:w-full">
-          <Number n={100} extra="+" />
+          <Number n={50} extra="+" />
           <p className="pb-2 font-Kalina text-xs text-neutral-500">
             Projects Completed
           </p>
@@ -406,7 +406,7 @@ const Stats = () => {
           </p>
         </div>
         <div className="flex flex-col gap-2 items-center px-8 py-2 lg:w-full">
-          <Number n={100} extra="+" />
+          <Number n={220} extra="+" />
           <p className="pb-2 font-Kalina text-xs text-neutral-500">
             Lorem Ipsum
           </p>
@@ -630,7 +630,7 @@ const Founder = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="bg-gray-300 rounded-md overflow-hidden flex flex-col lg:flex-row-reverse gap-6 p-4 py-6 lg:py-12 lg:pl-36">
+      <motion.div className="bg-neutral-300 rounded-md overflow-hidden flex flex-col lg:flex-row-reverse gap-6 p-4 py-6 lg:py-12 lg:pl-36">
         <motion.img src={founder_img} alt="Founder (Rajbeer)" />
 
         <motion.div className="text-neutral-900 flex flex-col gap-4">
