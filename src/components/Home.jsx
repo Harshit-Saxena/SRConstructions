@@ -44,7 +44,7 @@ const Home = () => {
 
 const ShuffleHero = () => {
   return (
-    <section className="w-full lg:h-screen px-8 py-24 mb-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+    <section className="w-full h-auto lg:h-[60vh] px-8 pt-24 mb-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
         <span className="block mb-4 text-base md:text-lg text-highlight font-medium">
           Better every day
@@ -59,7 +59,7 @@ const ShuffleHero = () => {
           relationships
         </p>
 
-        <button className="bg-dark text-white font-medium py-2 px-4 rounded transition-all active:scale-95">
+        <button className="bg-dark hover:bg-blue-500 text-white font-medium py-2 px-4 rounded transition-all active:scale-95">
           <Link to="/contact">Get in touch</Link>
         </button>
       </div>
@@ -520,7 +520,7 @@ const Service = () => {
                 onClick={() => setSelectedService(service)}
                 className={`bg-transparent lg:text-lg pb-2 ${
                   selectedService === service
-                    ? "text-boldClr border-b-2 border-boldClr"
+                    ? "text-blue-500 border-b-2 border-blue-500"
                     : "text-neutral-500"
                 }`}
               >
@@ -551,7 +551,7 @@ const Service = () => {
               <p className="text-lg lg:text-2xl text-neutral-700">
                 {services[selectedService].description}
               </p>
-              <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-boldClr w-fit">
+              <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-blue-500 w-fit">
                 <a href="/contact">
                   Learn more <FiArrowUpRight className="inline" />
                 </a>
@@ -622,7 +622,7 @@ const Founder = () => {
             </motion.p>
           ))}
 
-          <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-boldClr w-fit">
+          <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-blue-500 w-fit">
             <a href="/contact">
               Learn more <FiArrowUpRight className="inline" />
             </a>
@@ -630,7 +630,7 @@ const Founder = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="bg-neutral-300 rounded-md overflow-hidden flex flex-col lg:flex-row-reverse gap-6 p-4 py-6 lg:py-12 lg:pl-36">
+      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col lg:flex-row-reverse gap-6 p-4 py-6 lg:py-12 lg:pl-36">
         <motion.img src={founder_img} alt="Founder (Rajbeer)" />
 
         <motion.div className="text-neutral-900 flex flex-col gap-4">

@@ -26,7 +26,9 @@ export const Navbar = () => {
                 src={logo}
                 alt="SR Constructions"
               />
-              <span className="text-xs font-bold text-highlight">S.R. Constructions</span>
+              <span className="text-xs font-bold text-black">
+                S.R. Constructions
+              </span>
             </Link>
           </div>
           {/* Menu Icons */}
@@ -60,7 +62,7 @@ export const Navbar = () => {
             return (
               <Link
                 to={link.to}
-                className="hover:translate-x-1 hover:-translate-y-2 transition-all px-2 py-1 text-md lg:text-lg text-neutral-700 w-fit capitalize"
+                className="hover:translate-x-1 hover:-translate-y-2 transition-all px-2 py-1 text-md lg:text-lg text-neutral-700 hover:text-highlight w-fit capitalize"
                 key={link.id}
                 onClick={() => setOpen(false)}
               >

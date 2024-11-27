@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import footer_logo from "../assets/footer_logo.svg"
+import logo from "../assets/logo.svg"
 // import JD from "../assets/svg/JD.svg"
 // import Google from "../assets/svg/Google.svg"
 // import Facebook from "../assets/svg/Facebook.svg"
@@ -46,7 +46,7 @@ export const Footer = () => {
               <img
                 loading="lazy"
                 className="w-12 lg:w-14"
-                src={footer_logo}
+                src={logo}
                 alt="SR Constructions"
               />
             </Link>
@@ -89,48 +89,48 @@ export const Footer = () => {
             <ul className="grid grid-cols-1 gap-4">
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800">
+                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
                     Architectural Design and Planning
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800">
+                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
                     Building Permits and Approvals
                   </li>
                 </Link>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800">
+                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
                     Site Preparation and Excavation
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800">
+                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
                     Foundation and Framing
                   </li>
                 </Link>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800">
+                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
                     Plumbing and Electrical Work
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800">
+                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
                     Flooring and Painting
                   </li>
                 </Link>
               </div>
               <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800">
+                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
                     Roofing and Siding
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800">
+                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
                     Landscaping and Fencing
                   </li>
                 </Link>

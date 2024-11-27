@@ -7,7 +7,7 @@ export default {
         highlight: "#71B706",
         desc: "#1c0f13",
         boldClr: "#ea481f",
-        bgClr: "#e9eaec",
+        bgClr: "#ffffff",
         dark: "#214e34",
       },
       fontFamily: {
