@@ -90,114 +90,80 @@ const shuffle = (array) => {
 const squareData = [
   {
     id: 1,
-
     src:
-      "https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      "https://cdn.pixabay.com/photo/2020/01/10/01/46/construction-4754312_640.jpg",
   },
-
   {
     id: 2,
-
-    src:
-      "https://images.unsplash.com/photo-1510925758641-869d353cecc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    src: "https://cdn.pixabay.com/photo/2019/12/10/20/59/site-4686908_640.jpg",
   },
-
   {
     id: 3,
-
     src:
-      "https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "https://cdn.pixabay.com/photo/2017/08/12/09/51/worker-2633918_640.jpg",
   },
-
   {
     id: 4,
-
     src:
-      "https://images.unsplash.com/photo-1580238053495-b9720401fd45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "https://cdn.pixabay.com/photo/2016/02/23/19/32/construction-1218349_640.jpg",
   },
-
   {
     id: 5,
-
     src:
-      "https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80",
+      "https://cdn.pixabay.com/photo/2016/02/05/20/59/construction-1181982_640.jpg",
   },
-
   {
     id: 6,
-
-    src:
-      "https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    src: "https://cdn.pixabay.com/photo/2021/08/06/21/26/labor-6527243_640.jpg",
   },
-
   {
     id: 7,
-
     src:
-      "https://images.unsplash.com/photo-1599586120429-48281b6f0ece?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      "https://cdn.pixabay.com/photo/2021/09/09/07/02/construction-site-6609637_640.jpg",
   },
-
   {
     id: 8,
-
-    src:
-      "https://plus.unsplash.com/premium_photo-1671436824833-91c0741e89c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    src: "https://cdn.pixabay.com/photo/2016/08/01/17/53/macon-1561639_640.jpg",
   },
-
   {
     id: 9,
-
     src:
-      "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      "https://cdn.pixabay.com/photo/2021/09/09/07/02/construction-6609633_640.jpg",
   },
-
   {
     id: 10,
-
     src:
-      "https://images.unsplash.com/photo-1610768764270-790fbec18178?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "https://cdn.pixabay.com/photo/2024/05/02/09/41/construction-8734283_640.png",
   },
-
   {
     id: 11,
-
     src:
-      "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80",
+      "https://cdn.pixabay.com/photo/2022/03/18/19/18/construction-site-7077291_640.jpg",
   },
-
   {
     id: 12,
-
     src:
-      "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=882&q=80",
+      "https://cdn.pixabay.com/photo/2022/03/18/19/18/construction-site-7077291_640.jpg",
   },
-
   {
     id: 13,
-
     src:
-      "https://images.unsplash.com/photo-1560089000-7433a4ebbd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "https://cdn.pixabay.com/photo/2024/09/13/18/26/construction-9045703_640.jpg",
   },
-
   {
     id: 14,
-
     src:
-      "https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
+      "https://cdn.pixabay.com/photo/2019/10/31/21/06/first-mayo-4592881_640.jpg",
   },
-
   {
     id: 15,
-
     src:
-      "https://images.unsplash.com/photo-1606244864456-8bee63fce472?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=681&q=80",
+      "https://cdn.pixabay.com/photo/2016/04/28/03/31/migrant-workers-1358036_640.jpg",
   },
-
   {
     id: 16,
-
     src:
-      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1820&q=80",
+      "https://cdn.pixabay.com/photo/2022/10/17/05/21/building-site-7526687_640.jpg",
   },
 ]
 
@@ -429,15 +395,21 @@ const Stats = () => {
       <div className="flex flex-col md:flex-row justify-evenly items-center divide-y-2 md:divide-y-0 md:divide-x-2 divide-black">
         <div className="flex flex-col gap-2 items-center justify-center lg:w-full">
           <Number n={100} extra="+" />
-          <p className="pb-2 font-Kalina text-xs text-neutral-500">Projects Completed</p>
+          <p className="pb-2 font-Kalina text-xs text-neutral-500">
+            Projects Completed
+          </p>
         </div>
         <div className="flex flex-col gap-2 items-center px-8 py-2 lg:w-full">
           <Number n={100} extra="%" />
-          <p className="pb-2 font-Kalina text-xs text-neutral-500">Clients Statisfied</p>
+          <p className="pb-2 font-Kalina text-xs text-neutral-500">
+            Clients Statisfied
+          </p>
         </div>
         <div className="flex flex-col gap-2 items-center px-8 py-2 lg:w-full">
           <Number n={100} extra="+" />
-          <p className="pb-2 font-Kalina text-xs text-neutral-500">Lorem Ipsum</p>
+          <p className="pb-2 font-Kalina text-xs text-neutral-500">
+            Lorem Ipsum
+          </p>
         </div>
       </div>
     </div>
