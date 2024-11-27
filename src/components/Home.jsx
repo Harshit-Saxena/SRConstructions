@@ -44,7 +44,7 @@ export const Home = () => {
 
 const ShuffleHero = () => {
   return (
-    <section className="w-full h-screen px-8 py-24 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+    <section className="w-full lg:h-screen px-8 py-24 mb-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
         <span className="block mb-4 text-sm md:text-md text-highlight font-medium">
           Better every day
