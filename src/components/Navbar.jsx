@@ -9,7 +9,8 @@ export const Navbar = () => {
   const navItems = [
     { id: 1, link: "services", to: "/services" },
     { id: 2, link: "about us", to: "/about" },
-    { id: 3, link: "contact us", to: "/contact" },
+    { id: 3, link: "projects", to: "/projects" },
+    { id: 4, link: "contact us", to: "/contact" },
   ]
 
   return (

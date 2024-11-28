@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom"
 import logo from "../assets/logo.svg"
-// import JD from "../assets/svg/JD.svg"
-// import Google from "../assets/svg/Google.svg"
-// import Facebook from "../assets/svg/Facebook.svg"
-// import Instagram from "../assets/svg/Instagram.svg"
+import google from "../assets/google.svg"
+import fb from "../assets/fb.svg"
+import insta from "../assets/insta.svg"
 import Tooltip from "@mui/material/Tooltip"
 import call from "../assets/call.svg"
 import email from "../assets/email.svg"
@@ -55,25 +54,35 @@ export const Footer = () => {
           {/* //TODO: Add social links for company */}
           {/* socials */}
           <div className="flex gap-6 justify-between">
-            <div className="flex gap-6">
-              <Tooltip title="Just Dial" arrow>
-                <a href="" target="_blank">
-                  <img loading="lazy" alt="Just Dial" />
-                </a>
-              </Tooltip>
+            <div className="flex items-center gap-6">
               <Tooltip title="Instagram" arrow>
-                <a href="" target="_blank">
-                  <img loading="lazy" alt="Instagram" />
+                <a href="#" target="_blank">
+                  <img
+                    className="max-w-5"
+                    loading="lazy"
+                    src={insta}
+                    alt="Instagram"
+                  />
                 </a>
               </Tooltip>
               <Tooltip title="Facebook" arrow>
-                <a href="" target="_blank">
-                  <img loading="lazy" alt="Facebook" />
+                <a href="#" target="_blank">
+                  <img
+                    className="max-w-7"
+                    loading="lazy"
+                    src={fb}
+                    alt="Facebook"
+                  />
                 </a>
               </Tooltip>
               <Tooltip title="Google" arrow>
-                <a href="" target="_blank">
-                  <img loading="lazy" alt="Google" />
+                <a href="#" target="_blank">
+                  <img
+                    className="max-w-5"
+                    loading="lazy"
+                    src={google}
+                    alt="Google"
+                  />
                 </a>
               </Tooltip>
             </div>
@@ -143,7 +152,6 @@ export const Footer = () => {
         </div>
 
         {/* right div */}
-        {/* //TODO: Add company details  */}
         <div className="grid grid-cols-1 place-items-center lg:place-items-start gap-4 font-Sora w-full text-neutral-800">
           <p className="capitalize font-semibold text-center text-neutral-800">
             contact us
