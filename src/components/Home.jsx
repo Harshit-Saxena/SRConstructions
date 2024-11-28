@@ -469,7 +469,7 @@ const Service = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="flex flex-col gap-6 p-6 lg:px-36 lg:max-w-[80%]"
+      className="flex flex-col gap-6 p-6 lg:px-36"
     >
       <h2
         variants={childVariants}
@@ -485,7 +485,7 @@ const Service = () => {
 
       <motion.div
         variants={childVariants}
-        className="lg:text-xl flex flex-col gap-2"
+        className="lg:text-xl flex flex-col gap-2 lg:max-w-[80%]"
       >
         {[
           "With hundreds of successfully completed projects across the country, our portfolio includes everything from large industries and office buildings to small apartments",
@@ -500,17 +500,17 @@ const Service = () => {
             {text}
           </motion.p>
         ))}
+
+        <motion.q
+          className="font-semibold border-l-2 italic border-red-300 pl-4 lg:text-xl"
+          variants={childVariants}
+        >
+          No project is too big or too small for us. We're here to turn your
+          dreams into reality.
+        </motion.q>
       </motion.div>
 
-      <motion.q
-        className="font-semibold border-l-2 italic border-red-300 pl-4 lg:text-xl"
-        variants={childVariants}
-      >
-        No project is too big or too small for us. We're here to turn your
-        dreams into reality.
-      </motion.q>
-
-      <div className="py-6">
+      <div className="pt-6">
         {/* Buttons to change content */}
         <div className="flex flex-col gap-6">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:max-w-[70%] gap-6">
@@ -530,7 +530,7 @@ const Service = () => {
           </div>
 
           <motion.div
-            className="flex flex-col lg:flex-row justify-between gap-4 lg:gap-24 p-6 mt-6"
+            className="flex flex-col lg:flex-row justify-between gap-2 lg:gap-24 px-6 mt-6"
             initial={{ translateX: "-100vw", opacity: 0 }}
             animate={{ translateX: "0vw", opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -540,15 +540,15 @@ const Service = () => {
             <motion.img
               src={services[selectedService].image}
               alt={`${selectedService} Image`}
-              className="w-full lg:w-1/2 h-[20rem] lg:h-[40rem] object-cover rounded"
+              className="w-full lg:w-1/2 h-[30rem] xl:h-[40rem] object-center rounded"
             />
 
             {/* Text content */}
             <motion.div className="flex flex-col flex-1 gap-4 lg:w-1/2">
-              <h3 className="text-3xl lg:text-5xl font-bold">
+              <h3 className="text-3xl md:text-4xl font-bold">
                 {services[selectedService].title}
               </h3>
-              <p className="text-lg lg:text-2xl text-neutral-700">
+              <p className="text-lg md:text-xl text-neutral-700">
                 {services[selectedService].description}
               </p>
               <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-blue-500 w-fit">
@@ -587,7 +587,7 @@ const Founder = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="flex flex-col gap-6 px-6 lg:py-24 lg:px-36"
+      className="flex flex-col gap-6 px-6 lg:py-8 lg:px-36"
     >
       <motion.h2
         variants={childVariants}
@@ -599,7 +599,7 @@ const Founder = () => {
 
       <motion.div
         variants={childVariants}
-        className="flex flex-col gap-8 lg:gap-24 lg:flex-row"
+        className="flex flex-col gap-8 xl:gap-24 xl:flex-row"
       >
         <span className="font-semibold text-highlight text-2xl h-fit lg:text-3xl lg:whitespace-nowrap border-l-2 pl-2 border-boldClr">
           Vision to make dreams come true
@@ -630,13 +630,19 @@ const Founder = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col lg:flex-row-reverse gap-6 p-4 py-6 lg:py-12 lg:pl-36">
-        <motion.img src={founder_img} alt="Founder (Rajbeer)" />
+      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:flex-row-reverse gap-6 p-4 py-6 w-[50%] lg:w-[90%]">
+        <motion.img
+          className="max-w-xs"
+          src={founder_img}
+          alt="Founder (Rajbeer)"
+        />
 
-        <motion.div className="text-neutral-900 flex flex-col gap-4">
-          <h4 className="text-3xl lg:text-4xl font-semibold">Rajbeer Singh</h4>
-          <p className="text-xl lg:text-2xl">Founder</p>
-          <p className="text-md lg:text-lg lg:max-w-[50%]">
+        <motion.div className="text-neutral-900 flex flex-col items-center lg:items-start gap-4">
+          <h4 className="text-3xl lg:text-4xl font-semibold w-fit">
+            Rajbeer Singh
+          </h4>
+          <p className="text-xl lg:text-2xl font-kalina">Founder</p>
+          <p className="text-md lg:text-lg">
             In 2001, he founded S.R. Constructions, a company embodying his
             vision and core values of quality, innovation, and customer
             satisfaction. Since its inception, he has led the company with

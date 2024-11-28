@@ -6,7 +6,7 @@ import { FiArrowRight } from "react-icons/fi"
 
 const AboutUs = () => {
   return (
-    <div className="bg-white" style={{ paddingTop: "130px" }}>
+    <div className="bg-white" style={{ paddingTop: "75px" }}>
       <TextParallaxContent
         imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Collaborate"
@@ -55,7 +55,7 @@ const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
         paddingRight: IMG_PADDING,
       }}
     >
-      <div className="relative h-[140vh]">
+      <div className="relative h-[110vh] lg:h-[130vh]">
         <StickyImage imgUrl={imgUrl} />
         <OverlayCopy heading={heading} subheading={subheading} />
       </div>
@@ -132,10 +132,10 @@ const ExampleContent = (props) => (
       {props.heading} <FiArrowRight className="inline animate-pulse" />
     </h2>
     <div className="col-span-1 md:col-span-8">
-      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
+      <p className="mb-4 text-lg text-neutral-600 md:text-xl">
         {props.subHeading1}
       </p>
-      <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
+      <p className="mb-4 text-lg text-neutral-600 md:text-xl">
         {props.subHeading2}
       </p>
       <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">

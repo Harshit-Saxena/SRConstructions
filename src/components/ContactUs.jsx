@@ -2,6 +2,7 @@ import animation from "../animation"
 import { ReactLenis } from "lenis/dist/lenis-react"
 import { Marker, MapContainer, TileLayer, Popup } from "react-leaflet"
 import { useState } from "react"
+import Swal from "sweetalert2"
 import "leaflet/dist/leaflet.css"
 import emailjs from "emailjs-com"
 
@@ -46,19 +47,35 @@ const ContactForm = () => {
     setLoading(true)
     setMessage("")
 
-    const serviceID = "service_i0m0u2s" // Replace with your EmailJS service ID
-    const templateID = "template_86f2kgn" // Replace with your EmailJS template ID
-    const publicKey = "I5HwqV1WrHjEmUdYC" // Replace with your EmailJS public key
+    const serviceID = import.meta.env.VITE_serviceID
+    const templateID = import.meta.env.VITE_templateID
+    const publicKey = import.meta.env.VITE_publicKey
 
     emailjs
       .send(serviceID, templateID, formData, publicKey)
       .then(
         (response) => {
           setMessage("Email sent successfully!")
+          Swal.fire({
+            icon: "success",
+            text: `${message}`,
+            footer: "<b>We will contact you real soon!</b>",
+          })
           console.log("SUCCESS!", response.status, response.text)
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            number: "",
+          })
         },
         (err) => {
           setMessage("Failed to send email.")
+          Swal.fire({
+            icon: "error",
+            text: `${message}`,
+            footer: "You can contact us through call if it happens again",
+          })
           console.error("FAILED...", err)
         }
       )
@@ -74,12 +91,15 @@ const ContactForm = () => {
         We're here to help. Connect with us with an query and we'd be happy to
         discuss it !
       </p>
-      <form className="w-fit flex flex-col gap-4" onSubmit={handleSubmit}>
+      <form
+        className="w-full md:w-fit flex flex-col gap-4"
+        onSubmit={handleSubmit}
+      >
         <div className="flex flex-col sm:flex-row gap-2 md:gap-12">
           <div className="flex flex-col">
             <label className="lg:text-lg">First Name</label>
             <input
-              className="border-2 border-neutral-400 rounded-lg outline-none capitalize px-2 py-1 text-center text-blue-400"
+              className="border-2 border-neutral-400 rounded-lg outline-none capitalize px-2 py-1 text-center text-neutral-700"
               placeholder="abc"
               autoComplete="off"
               type="text"
@@ -92,7 +112,7 @@ const ContactForm = () => {
           <div className="flex flex-col">
             <label className="lg:text-lg">Last Name</label>
             <input
-              className="border-2 border-neutral-400 rounded-lg outline-none capitalize px-2 py-1 text-center text-blue-400"
+              className="border-2 border-neutral-400 rounded-lg outline-none capitalize px-2 py-1 text-center text-neutra-700"
               placeholder="xyz"
               autoComplete="off"
               type="text"
@@ -106,7 +126,7 @@ const ContactForm = () => {
         <div className="flex flex-col">
           <label className="lg:text-lg">Email</label>
           <input
-            className="border-2 border-neutral-400 rounded-lg outline-none px-2 py-1 text-center text-blue-400"
+            className="border-2 border-neutral-400 rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
             placeholder="you@email.com"
             autoComplete="off"
             type="email"
@@ -119,7 +139,7 @@ const ContactForm = () => {
         <div className="flex flex-col">
           <label className="lg:text-lg">Phone Number</label>
           <input
-            className="border-2 border-neutral-400 rounded-lg outline-none px-2 py-1 text-center text-blue-400"
+            className="border-2 border-neutral-400 rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
             placeholder="+91 9876543210"
             autoComplete="off"
             type="tel"
@@ -137,7 +157,6 @@ const ContactForm = () => {
           {loading ? "Sending..." : "Send"}
         </button>
       </form>
-      {message && <p>{message}</p>}
     </div>
   )
 }
@@ -153,12 +172,12 @@ const Map = () => {
       scrollWheelZoom={false}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={position}>
         <Popup>
-          <span className="lg:text-xl font-semibold">S.R. Constructions</span>{" "}
+          <span className="lg:text-xl font-semibold">S.R. Constructions</span>
           <br /> House no. 253, Amravati Enclave, Surajpur, Shimla-Kalka Highway
         </Popup>
       </Marker>

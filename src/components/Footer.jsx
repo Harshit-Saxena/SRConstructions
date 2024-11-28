@@ -87,50 +87,53 @@ export const Footer = () => {
           </p>
           <div className="flex flex-row gap-8 text-neutral-800">
             <ul className="grid grid-cols-1 gap-4">
-              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
+              <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Architectural Design and Planning
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Building Permits and Approvals
                   </li>
                 </Link>
               </div>
-              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
+
+              <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Site Preparation and Excavation
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Foundation and Framing
                   </li>
                 </Link>
               </div>
-              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
+
+              <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Plumbing and Electrical Work
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Flooring and Painting
                   </li>
                 </Link>
               </div>
-              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 place-items-center lg:place-items-start">
+
+              <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Roofing and Siding
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-sm text-neutral-800 hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Landscaping and Fencing
                   </li>
                 </Link>
