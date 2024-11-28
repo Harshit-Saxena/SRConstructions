@@ -630,7 +630,7 @@ const Founder = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:flex-row-reverse gap-6 p-4 py-6 w-[50%] lg:w-[90%]">
+      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:flex-row-reverse gap-6 p-4 py-6 md:w-[50%] lg:w-[90%]">
         <motion.img
           className="max-w-xs"
           src={founder_img}
