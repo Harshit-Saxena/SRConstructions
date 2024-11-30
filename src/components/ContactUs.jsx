@@ -4,6 +4,9 @@ import { Marker, MapContainer, TileLayer, Popup } from "react-leaflet"
 import { useState } from "react"
 import Swal from "sweetalert2"
 import "leaflet/dist/leaflet.css"
+import markerIconPng from "leaflet/dist/images/marker-icon.png"
+import { Icon } from "leaflet"
+
 import emailjs from "emailjs-com"
 
 const ContactUs = () => {
@@ -175,10 +178,24 @@ const Map = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={position}>
+      <Marker
+        position={position}
+        icon={
+          new Icon({
+            iconUrl: markerIconPng,
+            iconSize: [25, 41],
+          })
+        }
+      >
         <Popup>
           <span className="lg:text-xl font-semibold">S.R. Constructions</span>
-          <br /> House no. 253, Amravati Enclave, Surajpur, Shimla-Kalka Highway
+          <br />{" "}
+          <a
+            className="no-underline hover:underline"
+            href="https://maps.app.goo.gl/4VkJsiMQbHH9ceYV9"
+          >
+            House no. 253, Amravati Enclave, Surajpur, Shimla-Kalka Highway
+          </a>
         </Popup>
       </Marker>
     </MapContainer>
