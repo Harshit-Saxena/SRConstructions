@@ -520,7 +520,7 @@ const Service = () => {
                 onClick={() => setSelectedService(service)}
                 className={`bg-transparent lg:text-lg pb-2 ${
                   selectedService === service
-                    ? "text-blue-500 border-b-2 border-blue-500"
+                    ? "text-highlight border-b-2 border-highlight"
                     : "text-neutral-500"
                 }`}
               >
