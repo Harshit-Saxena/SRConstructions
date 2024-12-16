@@ -55,7 +55,9 @@ const ContactForm = () => {
     const publicKey = import.meta.env.VITE_publicKey
 
     emailjs
-      .send(serviceID, templateID, formData, publicKey)
+      .send(serviceID, templateID, formData, publicKey, {
+        withCredentials: false,
+      })
       .then(
         (response) => {
           setMessage("Email sent successfully!")
