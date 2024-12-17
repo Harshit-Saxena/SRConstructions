@@ -52,14 +52,15 @@ const ContactForm = () => {
 
     const serviceID = import.meta.env.VITE_serviceID
     const templateID = import.meta.env.VITE_templateID
-    const publicKey = import.meta.env.VITE_publicKey
+    const userID = import.meta.env.VITE_publicKey
+
+    console.log(userID)
 
     emailjs
-      .send(serviceID, templateID, formData, publicKey, {
-        withCredentials: false,
-      })
+      .send(serviceID, templateID, formData, userID)
       .then(
         (response) => {
+          setLoading(true)
           setMessage("Email sent successfully!")
           Swal.fire({
             icon: "success",
@@ -75,6 +76,7 @@ const ContactForm = () => {
           })
         },
         (err) => {
+          setLoading(false)
           setMessage("Failed to send email.")
           Swal.fire({
             icon: "error",
