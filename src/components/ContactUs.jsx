@@ -52,7 +52,7 @@ const ContactForm = () => {
 
     const serviceID = import.meta.env.VITE_serviceID
     const templateID = import.meta.env.VITE_templateID
-    const userID = import.meta.env.VITE_publicKey
+    const userID = import.meta.env.VITE_publicValue
 
     console.log(userID)
 
