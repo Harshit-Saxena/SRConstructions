@@ -28,7 +28,6 @@ export const Projects = () => {
       <VerticalTimeline lineColor="#71B706">
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2004-2017"
           iconStyle={{ background: "#ffffff" }}
           icon={<FontAwesomeIcon icon={faBuilding} />}
         >
@@ -40,7 +39,6 @@ export const Projects = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2017-2019"
           iconStyle={{ background: "#ffffff", color: "#fff" }}
           icon={<FontAwesomeIcon icon={faShop} />}
         >
@@ -55,7 +53,6 @@ export const Projects = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2019-2022"
           iconStyle={{ background: "#ffffff", color: "red" }}
           icon={<FontAwesomeIcon icon={faBuildingColumns} />}
         >
@@ -70,7 +67,6 @@ export const Projects = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2019"
           iconStyle={{ background: "#ffffff" }}
           icon={<FontAwesomeIcon icon={faWarehouse} />}
         >
@@ -85,7 +81,6 @@ export const Projects = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2020"
           iconStyle={{ background: "#ffffff" }}
           icon={<FontAwesomeIcon icon={faHospital} />}
         >
@@ -100,7 +95,6 @@ export const Projects = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2022"
           iconStyle={{ background: "#ffffff" }}
           icon={<FontAwesomeIcon icon={faHouseChimney} />}
         >
@@ -115,7 +109,6 @@ export const Projects = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2023"
           iconStyle={{ background: "#ffffff" }}
           icon={<FontAwesomeIcon icon={faStore} />}
         >
@@ -130,7 +123,6 @@ export const Projects = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2022-2024"
           iconStyle={{ background: "#ffffff", color: "red" }}
           icon={<FontAwesomeIcon icon={faTents} />}
         >
@@ -143,6 +135,18 @@ export const Projects = () => {
           <p className="">Lorem ipsum dolor sit amet.</p>
         </VerticalTimelineElement>
       </VerticalTimeline>
+
+      <button
+        className="fixed bottom-6 right-6 w-12 h-12 text-white rounded-full shadow-md flex items-center justify-center z-30"
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }}
+      >
+        ⬆️
+      </button>
     </motion.div>
   )
 }

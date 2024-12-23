@@ -16,8 +16,10 @@ export const Number = ({ n, extra = "" }) => {
   })
   return (
     <div ref={ref} className="flex items-center gap-1">
-      <animated.div className="text-5xl lg:text-6xl font-bold">{number.to((n) => n.toFixed(0))}</animated.div>
-      <span className="lg:text-3xl font-bold">{extra}</span>
+      <animated.div className="text-white text-7xl lg:text-8xl font-bold">
+        {number.to((n) => n.toFixed(0))}
+      </animated.div>
+      <span className="text-white lg:text-7xl font-bold">{extra}</span>
     </div>
   )
 }

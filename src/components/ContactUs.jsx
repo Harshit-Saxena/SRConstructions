@@ -92,7 +92,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 md:gap-12 px-4 md:ml-12 lg:ml-24 py-12">
+    <div className="flex flex-col gap-6 md:gap-12 px-4 md:ml-12 lg:ml-24 py-12 rounded-xl bg-gray-300">
       <h2 className="text-5xl font-Kalina">Get in touch</h2>
       <p className="text-lg lg:text-3xl max-w-[32ch] md:max-w-[35ch] text-neutral-500">
         We're here to help. Connect with us with an query and we'd be happy to
@@ -211,12 +211,12 @@ const ContactAndMap = () => {
   return (
     <div
       style={{ marginTop: "75px" }}
-      className="flex flex-col-reverse lg:flex-row lg:justify-center gap-2 bg-white"
+      className="flex flex-col lg:justify-center gap-2 bg-white"
     >
-      <div className="flex-1">
+      <div className="">
         <ContactForm />
       </div>
-      <div className="flex-1">
+      <div className="">
         <Map />
       </div>
     </div>

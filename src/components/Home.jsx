@@ -1,14 +1,9 @@
 import animation from "../animation"
 import { ReactLenis } from "lenis/dist/lenis-react"
-import {
-  motion,
-  useMotionTemplate,
-  useScroll,
-  useTransform,
-} from "framer-motion"
-import { useRef, useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { useState } from "react"
 import centerImage from "../assets/centerImage.jpg"
-import permits from "../assets/permits.jpg"
+import permits from "../assets/permit.webp"
 import foundation from "../assets/foundation.jpg"
 import excavation from "../assets/excavation.jpg"
 import fencing from "../assets/fencing.jpg"
@@ -16,6 +11,7 @@ import founder_img from "../assets/Founder.png"
 import { FiArrowUpRight } from "react-icons/fi"
 import { Number } from "./Number"
 import { Link } from "react-router-dom"
+import AnimatedSlides from "./AnimatedSlides"
 
 const Home = () => {
   return (
@@ -28,7 +24,9 @@ const Home = () => {
           syncTouch: true,
         }}
       >
-        <ShuffleHero />
+        {/* <ShuffleHero /> */}
+
+        <AnimatedSlides />
 
         <About />
 
@@ -37,175 +35,176 @@ const Home = () => {
         <Service />
 
         <Founder />
+
+        <Work />
+
+        <button
+          className="fixed bottom-6 right-6 w-12 h-12 text-white rounded-full shadow-md flex items-center justify-center z-30"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }}
+        >
+          ⬆️
+        </button>
       </ReactLenis>
     </div>
   )
 }
 
-const ShuffleHero = () => {
-  return (
-    <section className="w-full h-auto lg:h-[60vh] px-8 pt-24 mb-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
-      <div>
-        <span className="block mb-4 text-base md:text-lg text-highlight font-medium">
-          Better every day
-        </span>
+// const ShuffleHero = () => {
+//   return (
+//     <section className="w-full h-auto lg:h-[60vh] px-8 pt-24 mb-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+//       <div>
+//         <span className="block mb-4 text-base md:text-lg text-highlight font-medium">
+//           Better every day
+//         </span>
 
-        <h3 className="text-5xl md:text-7xl font-semibold text-boldClr">
-          Let's make your dream come true
-        </h3>
+//         <h3 className="text-5xl md:text-7xl font-semibold text-boldClr">
+//           Let's make your dream come true
+//         </h3>
 
-        <p className="text-xl text-slate-700 my-4 md:my-6">
-          We don't just build structures, we build trust and long-lasting
-          relationships
-        </p>
+//         <p className="text-xl text-slate-700 my-4 md:my-6">
+//           We don't just build structures, we build trust and long-lasting
+//           relationships
+//         </p>
 
-        <button className="bg-dark hover:bg-blue-500 text-white font-medium py-2 px-4 rounded transition-all active:scale-95">
-          <Link to="/contact">Get in touch</Link>
-        </button>
-      </div>
+//         <button className="bg-dark hover:bg-blue-500 text-white font-medium py-2 px-4 rounded transition-all active:scale-95">
+//           <Link to="/contact">Get in touch</Link>
+//         </button>
+//       </div>
 
-      <ShuffleGrid />
-    </section>
-  )
-}
+//       <ShuffleGrid />
+//     </section>
+//   )
+// }
 
-const shuffle = (array) => {
-  let currentIndex = array.length,
-    randomIndex
+// const shuffle = (array) => {
+//   let currentIndex = array.length,
+//     randomIndex
 
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex)
+//   while (currentIndex != 0) {
+//     randomIndex = Math.floor(Math.random() * currentIndex)
 
-    currentIndex--
-    ;[array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
+//     currentIndex--
+//     ;[array[currentIndex], array[randomIndex]] = [
+//       array[randomIndex],
 
-      array[currentIndex],
-    ]
-  }
+//       array[currentIndex],
+//     ]
+//   }
 
-  return array
-}
+//   return array
+// }
 
-const squareData = [
-  {
-    id: 1,
-    src:
-      "https://cdn.pixabay.com/photo/2020/01/10/01/46/construction-4754312_640.jpg",
-  },
-  {
-    id: 2,
-    src: "https://cdn.pixabay.com/photo/2019/12/10/20/59/site-4686908_640.jpg",
-  },
-  {
-    id: 3,
-    src:
-      "https://cdn.pixabay.com/photo/2017/08/12/09/51/worker-2633918_640.jpg",
-  },
-  {
-    id: 4,
-    src:
-      "https://cdn.pixabay.com/photo/2016/02/23/19/32/construction-1218349_640.jpg",
-  },
-  {
-    id: 5,
-    src:
-      "https://cdn.pixabay.com/photo/2016/02/05/20/59/construction-1181982_640.jpg",
-  },
-  {
-    id: 6,
-    src: "https://cdn.pixabay.com/photo/2021/08/06/21/26/labor-6527243_640.jpg",
-  },
-  {
-    id: 7,
-    src:
-      "https://cdn.pixabay.com/photo/2021/09/09/07/02/construction-site-6609637_640.jpg",
-  },
-  {
-    id: 8,
-    src: "https://cdn.pixabay.com/photo/2016/08/01/17/53/macon-1561639_640.jpg",
-  },
-  {
-    id: 9,
-    src:
-      "https://cdn.pixabay.com/photo/2021/09/09/07/02/construction-6609633_640.jpg",
-  },
-  {
-    id: 10,
-    src:
-      "https://cdn.pixabay.com/photo/2024/05/02/09/41/construction-8734283_640.png",
-  },
-  {
-    id: 11,
-    src:
-      "https://cdn.pixabay.com/photo/2022/03/18/19/18/construction-site-7077291_640.jpg",
-  },
-  {
-    id: 12,
-    src:
-      "https://cdn.pixabay.com/photo/2022/03/18/19/18/construction-site-7077291_640.jpg",
-  },
-  {
-    id: 13,
-    src:
-      "https://cdn.pixabay.com/photo/2024/09/13/18/26/construction-9045703_640.jpg",
-  },
-  {
-    id: 14,
-    src:
-      "https://cdn.pixabay.com/photo/2019/10/31/21/06/first-mayo-4592881_640.jpg",
-  },
-  {
-    id: 15,
-    src:
-      "https://cdn.pixabay.com/photo/2016/04/28/03/31/migrant-workers-1358036_640.jpg",
-  },
-  {
-    id: 16,
-    src:
-      "https://cdn.pixabay.com/photo/2022/10/17/05/21/building-site-7526687_640.jpg",
-  },
-]
+// const squareData = [
+//   {
+//     id: 1,
+//     src: "https://cdn.pixabay.com/photo/2020/01/10/01/46/construction-4754312_640.jpg",
+//   },
+//   {
+//     id: 2,
+//     src: "https://cdn.pixabay.com/photo/2019/12/10/20/59/site-4686908_640.jpg",
+//   },
+//   {
+//     id: 3,
+//     src: "https://cdn.pixabay.com/photo/2017/08/12/09/51/worker-2633918_640.jpg",
+//   },
+//   {
+//     id: 4,
+//     src: "https://cdn.pixabay.com/photo/2016/02/23/19/32/construction-1218349_640.jpg",
+//   },
+//   {
+//     id: 5,
+//     src: "https://cdn.pixabay.com/photo/2016/02/05/20/59/construction-1181982_640.jpg",
+//   },
+//   {
+//     id: 6,
+//     src: "https://cdn.pixabay.com/photo/2021/08/06/21/26/labor-6527243_640.jpg",
+//   },
+//   {
+//     id: 7,
+//     src: "https://cdn.pixabay.com/photo/2021/09/09/07/02/construction-site-6609637_640.jpg",
+//   },
+//   {
+//     id: 8,
+//     src: "https://cdn.pixabay.com/photo/2016/08/01/17/53/macon-1561639_640.jpg",
+//   },
+//   {
+//     id: 9,
+//     src: "https://cdn.pixabay.com/photo/2021/09/09/07/02/construction-6609633_640.jpg",
+//   },
+//   {
+//     id: 10,
+//     src: "https://cdn.pixabay.com/photo/2024/05/02/09/41/construction-8734283_640.png",
+//   },
+//   {
+//     id: 11,
+//     src: "https://cdn.pixabay.com/photo/2022/03/18/19/18/construction-site-7077291_640.jpg",
+//   },
+//   {
+//     id: 12,
+//     src: "https://cdn.pixabay.com/photo/2022/03/18/19/18/construction-site-7077291_640.jpg",
+//   },
+//   {
+//     id: 13,
+//     src: "https://cdn.pixabay.com/photo/2024/09/13/18/26/construction-9045703_640.jpg",
+//   },
+//   {
+//     id: 14,
+//     src: "https://cdn.pixabay.com/photo/2019/10/31/21/06/first-mayo-4592881_640.jpg",
+//   },
+//   {
+//     id: 15,
+//     src: "https://cdn.pixabay.com/photo/2016/04/28/03/31/migrant-workers-1358036_640.jpg",
+//   },
+//   {
+//     id: 16,
+//     src: "https://cdn.pixabay.com/photo/2022/10/17/05/21/building-site-7526687_640.jpg",
+//   },
+// ]
 
-const generateSquares = () => {
-  return shuffle(squareData).map((sq) => (
-    <motion.div
-      key={sq.id}
-      layout
-      transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full"
-      style={{
-        backgroundImage: `url(${sq.src})`,
+// const generateSquares = () => {
+//   return shuffle(squareData).map((sq) => (
+//     <motion.div
+//       key={sq.id}
+//       layout
+//       transition={{ duration: 1.5, type: "spring" }}
+//       className="w-full h-full"
+//       style={{
+//         backgroundImage: `url(${sq.src})`,
 
-        backgroundSize: "cover",
-      }}
-    ></motion.div>
-  ))
-}
+//         backgroundSize: "cover",
+//       }}
+//     ></motion.div>
+//   ))
+// }
 
-const ShuffleGrid = () => {
-  const timeoutRef = useRef(null)
+// const ShuffleGrid = () => {
+//   const timeoutRef = useRef(null)
 
-  const [squares, setSquares] = useState(generateSquares())
+//   const [squares, setSquares] = useState(generateSquares())
 
-  useEffect(() => {
-    shuffleSquares()
+//   useEffect(() => {
+//     shuffleSquares()
 
-    return () => clearTimeout(timeoutRef.current)
-  }, [])
+//     return () => clearTimeout(timeoutRef.current)
+//   }, [])
 
-  const shuffleSquares = () => {
-    setSquares(generateSquares())
+//   const shuffleSquares = () => {
+//     setSquares(generateSquares())
 
-    timeoutRef.current = setTimeout(shuffleSquares, 3000)
-  }
+//     timeoutRef.current = setTimeout(shuffleSquares, 3000)
+//   }
 
-  return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
-      {squares.map((sq) => sq)}
-    </div>
-  )
-}
+//   return (
+//     <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+//       {squares.map((sq) => sq)}
+//     </div>
+//   )
+// }
 
 // Parallax Image code
 // const isSmallerScreen = window.innerWidth <= 768
@@ -322,6 +321,7 @@ const ShuffleGrid = () => {
 // }
 
 // About us section
+
 const About = () => {
   // Define variants for container and children
   const containerVariants = {
@@ -386,31 +386,38 @@ const About = () => {
 // Stats section
 const Stats = () => {
   return (
-    <div className="flex flex-col gap-12 p-4">
-      <h3 className="text-3xl lg:text-4xl text-center text-highlight">
-        Lorem ipsum dolor sit amet{" "}
-        <span className="font-semibold">Lorem Ipsum</span>{" "}
+    <div className="bg-neutral-900 h-screen flex flex-col items-center justify-center gap-12 p-4">
+      <h3 className="uppercase text-3xl lg:text-6xl text-center text-highlight">
+        our <span className="font-semibold text-white">stats</span>{" "}
       </h3>
 
-      <div className="flex flex-col md:flex-row justify-evenly items-center divide-y-2 md:divide-y-0 md:divide-x-2 divide-black">
-        <div className="flex flex-col gap-2 items-center justify-center lg:w-full">
-          <Number n={50} extra="+" />
-          <p className="pb-2 font-Kalina text-xs text-neutral-500">
+      <div className="flex flex-col gap-4 justify-evenly items-center">
+        <div className="flex flex-col gap-2 items-center justify-center">
+          <Number n={100} extra="+" />
+          <p className="pb-2 text-sm lg:text-base text-neutral-300">
             Projects Completed
           </p>
         </div>
         <div className="flex flex-col gap-2 items-center px-8 py-2 lg:w-full">
           <Number n={100} extra="%" />
-          <p className="pb-2 font-Kalina text-xs text-neutral-500">
+          <p className="pb-2 text-sm lg:text-base text-neutral-300">
             Clients Statisfied
           </p>
         </div>
+        {/* //TODO:Add 3rd category */}
         <div className="flex flex-col gap-2 items-center px-8 py-2 lg:w-full">
           <Number n={220} extra="+" />
-          <p className="pb-2 font-Kalina text-xs text-neutral-500">
+          <p className="pb-2 text-sm lg:text-base text-neutral-300">
             Lorem Ipsum
           </p>
         </div>
+      </div>
+
+      <div className="flex flex-col gap-3 items-center">
+        <p className="uppercase bg-gray-100 text-[#00502f] font-light text-xs lg:text-base px-4 py-3 hover:text-gray-100 hover:bg-[#00502f] transition-all duration-300">
+          <a href="#work">Ready to work together?</a>
+        </p>
+        <p className="text-white">Know more about us</p>
       </div>
     </div>
   )
@@ -652,6 +659,40 @@ const Founder = () => {
         </motion.div>
       </motion.div>
     </motion.div>
+  )
+}
+
+// Ready to work together
+const Work = () => {
+  return (
+    <section
+      id="work"
+      className="flex flex-col items-center justify-center h-screen bg-neutral-950 p-4"
+    >
+      <div className="text-start flex flex-col gap-6">
+        <h3 className="text-white text-5xl lg:text-7xl font-semibold tracking-wider">
+          Ready to work together?
+        </h3>
+        <p className="text-gray-100 text-sm lg:text-xl max-w-[55ch] lg:max-w-[65ch]">
+          Whether you have a project in mind and you're looking for a reliable
+          construction partner or you're looking to take the next step in your
+          career, we want to hear from you!
+        </p>
+        {/* buttons */}
+        <div className="flex flex-col lg:flex-row gap-4">
+          <button className="text-[#00502f] bg-gray-50 hover:bg-[#00502f] hover:text-gray-100 transition-all duration-200 px-6 py-3">
+            <Link className="uppercase font-medium" to={"/contact"}>
+              Build a project with us
+            </Link>
+          </button>
+          <button className="text-[#00502f] bg-gray-50 hover:bg-[#00502f] hover:text-gray-100 transition-all duration-200 px-4 py-3">
+            <Link className="uppercase font-medium" to={"/career"}>
+              Build a career with us
+            </Link>
+          </button>
+        </div>
+      </div>
+    </section>
   )
 }
 

@@ -41,6 +41,18 @@ const AboutUs = () => {
 "
         />
       </TextParallaxContent>
+
+      <button
+        className="fixed bottom-6 right-6 w-12 h-12 text-white rounded-full shadow-md flex items-center justify-center z-30"
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }}
+      >
+        ⬆️
+      </button>
     </div>
   )
 }

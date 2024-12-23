@@ -17,7 +17,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0)
-    }, 50)
+    }, 1000)
   }, [pathname])
 
   return (
