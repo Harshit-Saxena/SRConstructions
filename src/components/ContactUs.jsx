@@ -33,10 +33,14 @@ const ContactForm = () => {
     lastName: "",
     email: "",
     number: "",
+    service: "",
   })
+
+  const sectors = ["Industrial", "Residential/Commercial"]
 
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState("")
+  const [errors, setErrors] = useState({})
 
   const handleChange = (e) => {
     setFormData({
@@ -45,16 +49,39 @@ const ContactForm = () => {
     })
   }
 
+  const validate = () => {
+    const newErrors = {}
+
+    if (!formData.firstName) newErrors.first_name = "First name is required"
+    if (!formData.lastName) newErrors.last_name = "Last name is required"
+    if (!formData.email) newErrors.email = "Email is required"
+    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email))
+      newErrors.email = "Email is invalid"
+    if (!formData.number) newErrors.number = "Phone number is required"
+    if (
+      formData.number &&
+      !/^((\+91?)|\+)?[7-9][0-9]{9}$/.test(formData.number)
+    )
+      newErrors.number = "Phone number is invalid"
+    if (!formData.service) newErrors.service = "Please select a service"
+
+    return newErrors
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    const validationErrors = validate()
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      return
+    }
     setLoading(true)
     setMessage("")
 
     const serviceID = import.meta.env.VITE_serviceID
     const templateID = import.meta.env.VITE_templateID
     const userID = import.meta.env.VITE_publicValue
-
-    console.log(userID)
 
     emailjs
       .send(serviceID, templateID, formData, userID)
@@ -64,8 +91,20 @@ const ContactForm = () => {
           setMessage("Email sent successfully!")
           Swal.fire({
             icon: "success",
-            text: `${message}`,
-            footer: "<b>We will contact you real soon!</b>",
+            html: `
+                <div class="flex flex-col gap-4">
+                    <p class="text-neutral-500 font-Sora">
+                    Your message is stored with us. We will contact you soon.
+                    </p>
+                    <div class="flex justify-center gap-6">
+                        <a class="text-blue-500 hover:text-blue-800 transition-all" href="/services">Explore our services</a>
+                        <a class="text-blue-500 hover:text-blue-800 transition-all" href="/">HomePage</a>
+                    </div>
+                </div>
+                `,
+            showCloseButton: true,
+            showCancelButton: false,
+            showConfirmButton: false,
           })
           console.log("SUCCESS!", response.status, response.text)
           setFormData({
@@ -73,6 +112,7 @@ const ContactForm = () => {
             lastName: "",
             email: "",
             number: "",
+            service: "",
           })
         },
         (err) => {
@@ -92,21 +132,18 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 md:gap-12 px-4 md:ml-12 lg:ml-24 py-12 rounded-xl bg-gray-300">
-      <h2 className="text-5xl font-Kalina">Get in touch</h2>
-      <p className="text-lg lg:text-3xl max-w-[32ch] md:max-w-[35ch] text-neutral-500">
-        We're here to help. Connect with us with an query and we'd be happy to
-        discuss it !
-      </p>
+    <div className="flex flex-col gap-6 md:gap-12 px-4 md:ml-12 lg:ml-24 py-12 pt-6 rounded-xl bg-white shadow-2xl">
       <form
         className="w-full md:w-fit flex flex-col gap-4"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col sm:flex-row gap-2 md:gap-12">
           <div className="flex flex-col">
-            <label className="lg:text-lg">First Name</label>
+            <label className="lg:text-lg">
+              First Name <span className="text-red-500">*</span>
+            </label>
             <input
-              className="border-2 border-neutral-400 rounded-lg outline-none capitalize px-2 py-1 text-center text-neutral-700"
+              className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutral-700"
               placeholder="abc"
               autoComplete="off"
               type="text"
@@ -115,11 +152,16 @@ const ContactForm = () => {
               onChange={handleChange}
               required
             />
+            {errors.firstName && (
+              <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+            )}
           </div>
           <div className="flex flex-col">
-            <label className="lg:text-lg">Last Name</label>
+            <label className="lg:text-lg">
+              Last Name <span className="text-red-500">*</span>
+            </label>
             <input
-              className="border-2 border-neutral-400 rounded-lg outline-none capitalize px-2 py-1 text-center text-neutra-700"
+              className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutra-700"
               placeholder="xyz"
               autoComplete="off"
               type="text"
@@ -128,12 +170,17 @@ const ContactForm = () => {
               onChange={handleChange}
               required
             />
+            {errors.lastName && (
+              <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
+            )}
           </div>
         </div>
         <div className="flex flex-col">
-          <label className="lg:text-lg">Email</label>
+          <label className="lg:text-lg">
+            Email <span className="text-red-500">*</span>
+          </label>
           <input
-            className="border-2 border-neutral-400 rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+            className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
             placeholder="you@email.com"
             autoComplete="off"
             type="email"
@@ -142,11 +189,43 @@ const ContactForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          )}
         </div>
         <div className="flex flex-col">
-          <label className="lg:text-lg">Phone Number</label>
+          <label className="lg:text-lg">
+            Service <span className="text-red-500">*</span>
+          </label>
+          <select
+            className="border-2 bg-white capitalize border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            id=""
+            required
+          >
+            <option value="" disabled>
+              Select a service
+            </option>
+            {sectors.map((sector, idx) => {
+              return (
+                <option key={idx} value={sector}>
+                  {sector}
+                </option>
+              )
+            })}
+          </select>
+          {errors.service && (
+            <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+          )}
+        </div>
+        <div className="flex flex-col">
+          <label className="lg:text-lg">
+            Phone Number <span className="text-red-500">*</span>
+          </label>
           <input
-            className="border-2 border-neutral-400 rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+            className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
             placeholder="+91 9876543210"
             autoComplete="off"
             type="tel"
@@ -155,9 +234,12 @@ const ContactForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.number && (
+            <p className="text-red-500 text-sm mt-1">{errors.number}</p>
+          )}
         </div>
         <button
-          className="cursor-pointer w-full text-center py-2 mt-2 rounded-full text-white bg-blue-500 hover:bg-blue-900 transition-all duration-300"
+          className="cursor-pointer w-full outline-none focus:bg-green-900 uppercase font-semibold text-center py-2 mt-2 rounded-full text-white bg-green-600 hover:bg-green-900 transition-all duration-300"
           type="submit"
           disabled={loading}
         >
@@ -173,8 +255,8 @@ const Map = () => {
   const position = [30.77517, 76.89569]
   return (
     <MapContainer
-      style={{ height: "40rem", zIndex: "100" }}
-      center={[30.77517, 76.89569]}
+      style={{ height: "35rem", zIndex: "100" }}
+      center={[30.77, 76.89569]}
       zoom={15}
       scrollWheelZoom={false}
     >
@@ -209,11 +291,26 @@ const Map = () => {
 // Parent Component
 const ContactAndMap = () => {
   return (
-    <div
-      style={{ marginTop: "75px" }}
-      className="flex flex-col lg:justify-center gap-2 bg-white"
-    >
-      <div className="">
+    <div style={{ marginTop: "75px" }} className="relative h-screen">
+      <div className="grid grid-cols-1 gap-2 place-items-center lg:place-items-start text-center p-8 lg:px-32">
+        <p className="text-lg text-primary-purple uppercase font-semibold">
+          contact us
+        </p>
+        <div className="grid grid-cols-1 gap-2 lg:text-start lg:grid-cols-2">
+          <h2 className="text-4xl lg:text-7xl font-Kalina text-highlight">
+            Get in touch
+          </h2>
+
+          <div className="grid grid-cols-1 gap-4 md:max-w-[55ch] lg:max-w-[75ch]">
+            <p className="text-xs md:text-base lg:text-lg text-neutral-500">
+              Whether you are ready to get started or simply have a question, we
+              are here to assist you. Connect with us anytime!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute z-[999] top-[41%] lg:top-[40%] left-[50%] -translate-x-[50%]">
         <ContactForm />
       </div>
       <div className="">
