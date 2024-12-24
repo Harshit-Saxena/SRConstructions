@@ -18,7 +18,7 @@ export const Navbar = () => {
   ]
 
   useEffect(() => {
-    if (location.pathname !== "https://lakshay-constructions.vercel.app/") {
+    if (location.pathname !== "/") {
       // If not on homepage, keep the styling consistent
       setScrolledDown(true)
       console.log(location.pathname)
