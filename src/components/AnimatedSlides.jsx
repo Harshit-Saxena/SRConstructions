@@ -10,7 +10,7 @@ const slides = [
     background: video3,
     type: "video",
     text: "Turning your dreams into reality with expertise you can rely on.",
-    heading: "Our moto",
+    heading: "",
   },
   {
     id: 2,
@@ -117,14 +117,16 @@ export default function AnimatedSlides() {
                     {slide.heading}
                   </span>
 
-                  <motion.div
-                    className="w-56 md:w-80 lg:w-72 order-2 lg:order-1 h-0.5 bg-boldClr"
-                    variants={{
-                      hidden: { x: "100%", opacity: 0 },
-                      visible: { x: "0", opacity: 1 },
-                    }}
-                    transition={{ delay: 0.5, duration: 0.4 }}
-                  ></motion.div>
+                  {currentSlide !== 0 && (
+                    <motion.div
+                      className="w-56 md:w-80 lg:w-72 order-2 lg:order-1 h-0.5 bg-boldClr"
+                      variants={{
+                        hidden: { x: "100%", opacity: 0 },
+                        visible: { x: "0", opacity: 1 },
+                      }}
+                      transition={{ delay: 0.5, duration: 0.4 }}
+                    ></motion.div>
+                  )}
                 </motion.div>
 
                 <motion.p

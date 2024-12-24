@@ -15,40 +15,46 @@ import AnimatedSlides from "./AnimatedSlides"
 const Home = () => {
   return (
     <div className="bg-bgClr flex flex-col gap-6">
-      <ReactLenis
-        root
-        options={{
-          lerp: 0.05,
-          // infinite: true,
-          syncTouch: true,
+      {/* <ShuffleHero /> */}
+
+      <AnimatedSlides />
+
+      <About />
+
+      <Stats />
+
+      <Service />
+
+      <Founder />
+
+      <Work />
+
+      <button
+        className="fixed bottom-6 right-6 w-14 h-14 bg-white text-blue-600 rounded-full shadow-lg flex items-center justify-center z-30 transform hover:scale-110 hover:bg-blue-600 hover:text-white hover:shadow-2xl transition-all"
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
         }}
       >
-        {/* <ShuffleHero /> */}
-
-        <AnimatedSlides />
-
-        <About />
-
-        <Stats />
-
-        <Service />
-
-        <Founder />
-
-        <Work />
-
-        <button
-          className="fixed bottom-6 right-6 w-12 h-12 text-white rounded-full shadow-md flex items-center justify-center z-30"
-          onClick={() => {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            })
-          }}
-        >
-          ⬆️
-        </button>
-      </ReactLenis>
+        <div className="flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </div>
+      </button>
     </div>
   )
 }
@@ -343,14 +349,31 @@ const About = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="flex flex-col gap-6 px-6 lg:py-24 lg:px-36 lg:max-w-[80%]"
+      className="flex flex-col gap-6 px-6 lg:py-24 lg:px-36 lg:max-w-[80%] overflow-hidden"
     >
-      <h2
-        variants={childVariants}
-        className="text-sm text-neutral-700 uppercase"
+      <motion.div
+        className="flex items-center lg:flex-row gap-2"
+        variants={{
+          hidden: { y: 30, opacity: 0 },
+          visible: { y: 0, opacity: 1 },
+        }}
+        transition={{ delay: 0.15, duration: 0.4 }}
       >
-        Who we are
-      </h2>
+        <motion.h2
+          variants={childVariants}
+          className="text-sm text-neutral-700 order-1 lg:order-2 uppercase font-semibold"
+        >
+          Who we are
+        </motion.h2>
+        <motion.div
+          className="w-56 md:w-80 lg:w-72 order-2 lg:order-1 h-0.5 bg-boldClr"
+          variants={{
+            hidden: { x: "100%", opacity: 0 },
+            visible: { x: "0", opacity: 1 },
+          }}
+          transition={{ delay: 0.5, duration: 0.4 }}
+        ></motion.div>
+      </motion.div>
 
       <span className="font-semibold text-highlight text-2xl lg:text-5xl border-l-2 border-boldClr pl-2">
         Focused and Future Ready
@@ -403,20 +426,18 @@ const Stats = () => {
             Clients Statisfied
           </p>
         </div>
-        {/* //TODO:Add 3rd category */}
         <div className="flex flex-col gap-2 items-center px-8 py-2 lg:w-full">
-          <Number n={220} extra="+" />
+          <Number n={10} extra="+" />
           <p className="pb-2 text-sm lg:text-base text-neutral-300">
-            Lorem Ipsum
+            States covered
           </p>
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 items-center">
+      <div className="flex flex-col gap-3 items-center cursor-pointer">
         <p className="uppercase bg-gray-100 text-[#00502f] font-light text-xs lg:text-base px-4 py-3 hover:text-gray-100 hover:bg-[#00502f] transition-all duration-300">
           <a href="#work">Ready to work together?</a>
         </p>
-        <p className="text-white">Know more about us</p>
       </div>
     </div>
   )
@@ -454,7 +475,6 @@ const Service = () => {
 
   const [selectedService, setSelectedService] = useState("Permits")
 
-  // Define variants for container and children
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -469,21 +489,38 @@ const Service = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   }
+
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="flex flex-col gap-6 p-6 lg:px-36"
+      className="flex flex-col gap-6 p-6 lg:px-36 overflow-hidden"
     >
-      <h2
-        variants={childVariants}
-        className="text-md text-neutral-700 uppercase"
+      <motion.div
+        className="flex items-center lg:flex-row gap-2"
+        variants={{
+          hidden: { y: 30, opacity: 0 },
+          visible: { y: 0, opacity: 1 },
+        }}
+        transition={{ delay: 0.15, duration: 0.4 }}
       >
-        {" "}
-        What we do
-      </h2>
+        <motion.h2
+          variants={childVariants}
+          className="text-sm text-neutral-700 order-1 lg:order-2 uppercase font-semibold"
+        >
+          What we do
+        </motion.h2>
+        <motion.div
+          className="w-56 md:w-80 lg:w-72 order-2 lg:order-1 h-0.5 bg-boldClr"
+          variants={{
+            hidden: { x: "100%", opacity: 0 },
+            visible: { x: "0", opacity: 1 },
+          }}
+          transition={{ delay: 0.5, duration: 0.4 }}
+        ></motion.div>
+      </motion.div>
 
       <span className="font-semibold text-highlight text-2xl lg:text-5xl border-l-2 border-boldClr pl-2">
         We have a vision for the future of construction
@@ -557,7 +594,7 @@ const Service = () => {
               <p className="text-lg md:text-xl text-neutral-700">
                 {services[selectedService].description}
               </p>
-              <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-blue-500 w-fit">
+              <button className="rounded bg-highlight hover:text-highlight hover:bg-white hover:border-highlight border-2 border-transparent px-4 py-1 text-md text-white transition-colors w-fit">
                 <a href="/contact">
                   Learn more <FiArrowUpRight className="inline" />
                 </a>
@@ -593,15 +630,31 @@ const Founder = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="flex flex-col gap-6 px-6 lg:py-8 lg:px-36"
+      className="flex flex-col gap-6 px-6 lg:py-8 lg:px-36 overflow-hidden"
     >
-      <motion.h2
-        variants={childVariants}
-        className="text-md text-neutral-700 uppercase"
+      <motion.div
+        className="flex items-center lg:flex-row gap-2"
+        variants={{
+          hidden: { y: 30, opacity: 0 },
+          visible: { y: 0, opacity: 1 },
+        }}
+        transition={{ delay: 0.15, duration: 0.4 }}
       >
-        {" "}
-        Our founder
-      </motion.h2>
+        <motion.h2
+          variants={childVariants}
+          className="text-xs text-neutral-700 order-1 lg:order-2 uppercase font-semibold"
+        >
+          Our Founder
+        </motion.h2>
+        <motion.div
+          className="w-56 md:w-80 lg:w-72 order-2 lg:order-1 h-0.5 bg-boldClr"
+          variants={{
+            hidden: { x: "100%", opacity: 0 },
+            visible: { x: "0", opacity: 1 },
+          }}
+          transition={{ delay: 0.5, duration: 0.4 }}
+        ></motion.div>
+      </motion.div>
 
       <motion.div
         variants={childVariants}
@@ -628,7 +681,7 @@ const Founder = () => {
             </motion.p>
           ))}
 
-          <button className="rounded bg-highlight px-4 py-1 text-md text-white transition-colors hover:bg-blue-500 w-fit">
+          <button className="rounded bg-highlight hover:text-highlight hover:bg-white hover:border-highlight border-2 border-transparent  px-4 py-1 text-md text-white transition-colors w-fit">
             <a href="/contact">
               Learn more <FiArrowUpRight className="inline" />
             </a>

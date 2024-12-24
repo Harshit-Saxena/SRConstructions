@@ -34,7 +34,7 @@ export const Footer = () => {
   ]
 
   return (
-    <footer className="grid grid-cols-1 px-12 py-8 gap-12 bg-neutral-800">
+    <footer className="grid grid-cols-1 px-12 py-8 gap-12 bg-white">
       <p className="h-1 bg-boldClr"></p>
 
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 place-items-center">
@@ -91,17 +91,17 @@ export const Footer = () => {
 
         {/* middle div */}
         <div className="grid grid-cols-1 place-items-center gap-4 font-Sora">
-          <p className="capitalize text-white font-semibold">our services</p>
+          <p className="capitalize text-neutral-800 font-semibold">our services</p>
           <div className="flex flex-row gap-8 text-white">
             <ul className="grid grid-cols-1 gap-4">
               <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-xs text-white hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Architectural Design and Planning
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-xs text-white hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Building Permits and Approvals
                   </li>
                 </Link>
@@ -109,12 +109,12 @@ export const Footer = () => {
 
               <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-xs text-white hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Site Preparation and Excavation
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-xs text-white hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Foundation and Framing
                   </li>
                 </Link>
@@ -122,12 +122,12 @@ export const Footer = () => {
 
               <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-xs text-white hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Plumbing and Electrical Work
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-xs text-white hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Flooring and Painting
                   </li>
                 </Link>
@@ -135,12 +135,12 @@ export const Footer = () => {
 
               <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-xs text-white hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Roofing and Siding
                   </li>
                 </Link>
                 <Link to={"/contact"}>
-                  <li className="whitespace-nowrap text-xs text-white hover:text-highlight transition-all duration-200">
+                  <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
                     Landscaping and Fencing
                   </li>
                 </Link>
@@ -151,7 +151,7 @@ export const Footer = () => {
 
         {/* right div */}
         <div className="grid grid-cols-1 place-items-center lg:place-items-start gap-4 font-Sora w-full text-white">
-          <p className="capitalize font-semibold text-center text-white">
+          <p className="capitalize font-semibold text-center text-neutral-800">
             contact us
           </p>
           {details.map((data, idx) => {
@@ -172,8 +172,8 @@ export const Footer = () => {
         <hr />
 
         <div className="flex flex-col-reverse gap-4 text-center lg:flex-row justify-between font-Sora text-white text-sm lg:text-base">
-          <p className="text-white">{`Copyright ©${currentYear} All rights reserved`}</p>
-          <p className="text-white">
+          <p className="text-netral-800">{`Copyright ©${currentYear} All rights reserved`}</p>
+          <p className="text-netral-800">
             Designed and Developed By{" "}
             <a
               className="underline font-semibold"

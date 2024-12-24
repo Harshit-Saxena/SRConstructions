@@ -21,14 +21,14 @@ export const Careers = () => {
     },
     {
       icon: <FaBuilding />,
-      title: "Beautfil workplace",
+      title: "Beautiful workplace",
       desc: "Step into the office and discover a workplace designed to inspire and rejuvenate every day. At S.R. Constructions, beauty isn't just outside—it's the energy and care woven into every corner.",
     },
   ]
   return (
     <section className="">
       <div
-        className="relative bg-[url('https://images.unsplash.com/photo-1700376228506-c08c9fc790ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-top lg:bg-left-top"
+        className="relative bg-[url('https://images.unsplash.com/photo-1723107638858-331404b1a09a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center"
         style={{
           paddingTop: "500px",
         }}
@@ -40,7 +40,7 @@ export const Careers = () => {
             </p>
             <h3 className="font-bold text-3xl md:text-4xl lg:text-5xl tracking-wider">
               Build what the world{" "}
-              <span className="text-highlight italic">needs</span>.
+              <span className="text-boldClr italic">needs</span>.
             </h3>
             <p className="font-light text-xs md:text-sm lg:max-w-[85ch] tracking-wide text-gray-500">
               We are shaping the future of construction. If you are excited by
@@ -74,7 +74,7 @@ export const Careers = () => {
           return (
             <div key={idx} className="flex flex-col gap-4">
               <span className="text-xl lg:text-3xl">{benefit.icon}</span>
-              <h4 className="font-semibold text-3xl tracking-wide text-boldClr">
+              <h4 className="font-semibold text-3xl tracking-wide text-highlight">
                 {benefit.title}
               </h4>
               <p className="text-gray-500 text-xs md:text-sm">{benefit.desc}</p>
@@ -88,7 +88,7 @@ export const Careers = () => {
       </div>
 
       <button
-        className="fixed bottom-6 right-6 w-12 h-12 text-white rounded-full shadow-md flex items-center justify-center z-30"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-white text-blue-600 rounded-full shadow-lg flex items-center justify-center z-30 transform hover:scale-110 hover:bg-blue-600 hover:text-white hover:shadow-2xl transition-all"
         onClick={() => {
           window.scrollTo({
             top: 0,
@@ -96,7 +96,22 @@ export const Careers = () => {
           })
         }}
       >
-        ⬆️
+        <div className="flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </div>
       </button>
     </section>
   )

@@ -1,5 +1,4 @@
 import animation from "../animation"
-import { ReactLenis } from "lenis/dist/lenis-react"
 import { Marker, MapContainer, TileLayer, Popup } from "react-leaflet"
 import { useState } from "react"
 import Swal from "sweetalert2"
@@ -12,16 +11,7 @@ import emailjs from "emailjs-com"
 const ContactUs = () => {
   return (
     <div className="bg-bgClr flex flex-col gap-6">
-      <ReactLenis
-        root
-        options={{
-          lerp: 0.05,
-          // infinite: true,
-          syncTouch: true,
-        }}
-      >
-        <ContactAndMap />
-      </ReactLenis>
+      <ContactAndMap />
     </div>
   )
 }
@@ -316,6 +306,32 @@ const ContactAndMap = () => {
       <div className="">
         <Map />
       </div>
+      <button
+        className="fixed bottom-6 right-6 w-14 h-14 bg-white text-blue-600 rounded-full shadow-lg flex items-center justify-center z-30 transform hover:scale-110 hover:bg-blue-600 hover:text-white hover:shadow-2xl transition-all"
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }}
+      >
+        <div className="flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </div>
+      </button>
     </div>
   )
 }
