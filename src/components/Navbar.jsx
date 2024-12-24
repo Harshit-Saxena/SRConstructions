@@ -18,11 +18,13 @@ export const Navbar = () => {
   ]
 
   useEffect(() => {
-    if (location.pathname !== "/") {
+    if (location.pathname !== "https://lakshay-constructions.vercel.app/") {
       // If not on homepage, keep the styling consistent
       setScrolledDown(true)
+      console.log(location.pathname)
       return
     } else {
+      console.log(location.pathname)
       setScrolledDown(false)
     }
 
@@ -97,7 +99,7 @@ export const Navbar = () => {
           {navItems.map((link) => (
             <Link
               to={link.to}
-              className={`border-b-2 border-transparent hover:border-b-2 hover:border-highlight transition-all px-2 py-1 text-md whitespace-nowrap hover:text-highlight w-fit capitalize text-black lg:${
+              className={`border-b-2 border-transparent hover:border-b-2 hover:border-highlight transition-all px-2 py-1 text-md whitespace-nowrap w-fit capitalize text-black lg:${
                 scrolledDown ? "text-black" : "text-white"
               } lg:group-hover:text-black`}
               key={link.id}
