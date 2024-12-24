@@ -1,20 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faBuilding,
-  faShop,
-  faBuildingColumns,
-  faWarehouse,
-  faHospital,
-  faHouseChimney,
-  faStore,
-  faTents,
-} from "@fortawesome/free-solid-svg-icons"
+import { faCircle } from "@fortawesome/free-solid-svg-icons"
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component"
 import "react-vertical-timeline-component/style.min.css"
 import { motion } from "framer-motion"
+import SteelBird from "../assets/SteelBird.webp"
+import cipla from "../assets/cipla.png"
 
 export const Projects = () => {
   return (
@@ -23,38 +16,68 @@ export const Projects = () => {
       className="px-2"
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
-      //   exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
     >
       <VerticalTimeline lineColor="#71B706">
         <VerticalTimelineElement
-          className="vertical-timeline-element--education"
+          contentStyle={{ borderRadius: "10px" }}
+          //   contentArrowStyle={{ borderRight: "10px solid grey" }}
           iconStyle={{ background: "#ffffff" }}
-          icon={<FontAwesomeIcon icon={faBuilding} />}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
         >
-          <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
-            Project 1
-          </h3>
-          <p className="">Lorem ipsum dolor sit amet.</p>
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={SteelBird}
+              className="hover:scale-110 transition-all duration-700"
+              alt="SteelBird Helmets"
+            />
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            SteelBird Helmets
+          </p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           iconStyle={{ background: "#ffffff", color: "#fff" }}
-          icon={<FontAwesomeIcon icon={faShop} />}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
         >
-          <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
-            Project 2
-          </h3>
-          <p className="text-lg vertical-timeline-element-subtitle">
-            Lorem ipsum dolor sit amet.
+          {/* TODO: Add cipla pharma img */}
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={cipla}
+              className="hover:scale-110 transition-all duration-700"
+              alt="SteelBird Helmets"
+            />
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            Cipla Pharma
           </p>
-          <p className="">Lorem ipsum dolor sit amet.</p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          iconStyle={{ background: "#ffffff", color: "red" }}
-          icon={<FontAwesomeIcon icon={faBuildingColumns} />}
+          iconStyle={{ background: "#ffffff" }}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
         >
           <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
             Project 3
@@ -68,7 +91,13 @@ export const Projects = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           iconStyle={{ background: "#ffffff" }}
-          icon={<FontAwesomeIcon icon={faWarehouse} />}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
         >
           <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
             Project 4
@@ -82,7 +111,13 @@ export const Projects = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           iconStyle={{ background: "#ffffff" }}
-          icon={<FontAwesomeIcon icon={faHospital} />}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
         >
           <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
             Project 5
@@ -96,7 +131,13 @@ export const Projects = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           iconStyle={{ background: "#ffffff" }}
-          icon={<FontAwesomeIcon icon={faHouseChimney} />}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
         >
           <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
             Project 6
@@ -110,7 +151,13 @@ export const Projects = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           iconStyle={{ background: "#ffffff" }}
-          icon={<FontAwesomeIcon icon={faStore} />}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
         >
           <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
             Project 7
@@ -124,7 +171,13 @@ export const Projects = () => {
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           iconStyle={{ background: "#ffffff", color: "red" }}
-          icon={<FontAwesomeIcon icon={faTents} />}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
         >
           <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
             Project 8

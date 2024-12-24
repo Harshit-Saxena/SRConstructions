@@ -1,4 +1,3 @@
-import { motion } from "framer-motion"
 import animation from "../animation"
 import { Link } from "react-router-dom"
 import { FiArrowUpRight } from "react-icons/fi"
@@ -58,7 +57,7 @@ const Services = () => {
   return (
     <div
       className="grid grid-cols-1 gap-2 lg:gap-10 place-items-center"
-      style={{ paddingTop: "75px" }}
+      style={{ paddingTop: "100px" }}
     >
       <p className="font-Vietnam text-2xl lg:text-4xl font-semibold text-primary-purple">
         Our Services
@@ -103,7 +102,7 @@ const ServicePageDiv = ({ src, service, mobileDetail, order }) => {
       <div
         className={`flex flex-col gap-4 justify-start items-center text-center lg:text-start lg:items-start font-Vietnam ${order}`}
       >
-        <p className="font-Vietnam font-semibold uppercase text-xl lg:text-2xl">
+        <p className="font-Vietnam font-medium uppercase text-xl lg:text-2xl">
           {service}
         </p>
         <p className="text-sm md:text-base max-w-[50ch] xl:max-w-[45ch] text-neutral-500">

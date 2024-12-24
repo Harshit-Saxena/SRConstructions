@@ -1,14 +1,14 @@
 import React from "react"
-import { motion, AnimatePresence, delay } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import video1 from "../assets/videos/video1.mp4"
 import video2 from "../assets/videos/video2.mp4"
+import video3 from "../assets/videos/video3.mp4"
 
 const slides = [
   {
     id: 1,
-    background:
-      "https://images.unsplash.com/photo-1694521787162-5373b598945c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    type: "image",
+    background: video3,
+    type: "video",
     text: "Turning your dreams into reality with expertise you can rely on.",
     heading: "Our moto",
   },

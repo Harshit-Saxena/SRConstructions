@@ -10,7 +10,7 @@ export const Navbar = () => {
     { id: 1, link: "about us", to: "/about" },
     { id: 2, link: "services", to: "/services" },
     { id: 3, link: "projects", to: "/projects" },
-    { id: 4, link: "career", to: "/career" },
+    { id: 4, link: "careers", to: "/careers" },
     { id: 5, link: "propertier", to: "/propertier" },
     { id: 6, link: "contact us", to: "/contact" },
   ]

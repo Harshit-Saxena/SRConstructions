@@ -9,6 +9,7 @@ import Services from "./components/Services"
 import { AnimatePresence } from "framer-motion"
 import { Projects } from "./components/Projects"
 import { useEffect } from "react"
+import Careers from "./components/Careers"
 
 export default function App() {
   const location = useLocation()
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </AnimatePresence>

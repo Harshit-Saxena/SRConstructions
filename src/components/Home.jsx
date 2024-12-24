@@ -2,7 +2,6 @@ import animation from "../animation"
 import { ReactLenis } from "lenis/dist/lenis-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
-import centerImage from "../assets/centerImage.jpg"
 import permits from "../assets/permit.webp"
 import foundation from "../assets/foundation.jpg"
 import excavation from "../assets/excavation.jpg"
@@ -670,7 +669,7 @@ const Work = () => {
       className="flex flex-col items-center justify-center h-screen bg-neutral-950 p-4"
     >
       <div className="text-start flex flex-col gap-6">
-        <h3 className="text-white text-5xl lg:text-7xl font-semibold tracking-wider">
+        <h3 className="text-white text-5xl lg:text-7xl lg:max-w-[15ch] font-semibold tracking-wider">
           Ready to work together?
         </h3>
         <p className="text-gray-100 text-sm lg:text-xl max-w-[55ch] lg:max-w-[65ch]">

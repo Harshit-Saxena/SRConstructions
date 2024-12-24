@@ -51,7 +51,7 @@ export const Footer = () => {
             </Link>
           </div>
 
-          {/* //TODO: Add social links for company */}
+          {/* TODO: Add social links for company */}
           {/* socials */}
           <div className="flex gap-6 justify-between">
             <div className="flex items-center gap-6">
@@ -172,8 +172,8 @@ export const Footer = () => {
         <hr />
 
         <div className="flex flex-col-reverse gap-4 text-center lg:flex-row justify-between font-Sora text-white text-sm lg:text-base">
-          <p>{`Copyright ©${currentYear} All rights reserved`}</p>
-          <p>
+          <p className="text-white">{`Copyright ©${currentYear} All rights reserved`}</p>
+          <p className="text-white">
             Designed and Developed By{" "}
             <a
               className="underline font-semibold"

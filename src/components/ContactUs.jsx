@@ -36,7 +36,7 @@ const ContactForm = () => {
     service: "",
   })
 
-  const sectors = ["Industrial", "Residential/Commercial"]
+  const sectors = ["Industrial", "Residential-Commercial"]
 
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState("")
@@ -52,8 +52,8 @@ const ContactForm = () => {
   const validate = () => {
     const newErrors = {}
 
-    if (!formData.firstName) newErrors.first_name = "First name is required"
-    if (!formData.lastName) newErrors.last_name = "Last name is required"
+    if (!formData.firstName) newErrors.firstName = "First name is required"
+    if (!formData.lastName) newErrors.lastName = "Last name is required"
     if (!formData.email) newErrors.email = "Email is required"
     if (formData.email && !/\S+@\S+\.\S+/.test(formData.email))
       newErrors.email = "Email is invalid"
@@ -97,8 +97,8 @@ const ContactForm = () => {
                     Your message is stored with us. We will contact you soon.
                     </p>
                     <div class="flex justify-center gap-6">
-                        <a class="text-blue-500 hover:text-blue-800 transition-all" href="/services">Explore our services</a>
-                        <a class="text-blue-500 hover:text-blue-800 transition-all" href="/">HomePage</a>
+                        <a class="text-blue-500 hover:text-blue-800 transition-all" href="/services">Our services</a>
+                        <a class="text-blue-500 hover:text-blue-800 transition-all" href="/about">Know about us</a>
                     </div>
                 </div>
                 `,
