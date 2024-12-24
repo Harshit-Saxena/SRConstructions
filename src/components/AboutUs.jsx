@@ -37,13 +37,12 @@ const AboutUs = () => {
         <ExampleContent
           heading="Our principals"
           subHeading1="Whether you are building a new industrial facility, a dream home, a commercial space, or require renovations, extensions, or repairs, we are your ideal partner."
-          subHeading2="Our approach combines innovation, precision, and a deep understanding of our clients’ needs to create spaces that inspire and endure.
-"
+          subHeading2="Our approach combines innovation, precision, and deep understanding of our clients needs to create spaces that inspire and endure."
         />
       </TextParallaxContent>
 
       <button
-        className="fixed bottom-6 right-6 w-14 h-14 bg-white text-blue-600 rounded-full shadow-lg flex items-center justify-center z-30 transform hover:scale-110 hover:bg-blue-600 hover:text-white hover:shadow-2xl transition-all"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center z-30 transform hover:scale-110 hover:bg-highlight hover:text-white hover:shadow-2xl transition-all"
         onClick={() => {
           window.scrollTo({
             top: 0,

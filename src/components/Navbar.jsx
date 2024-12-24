@@ -21,10 +21,8 @@ export const Navbar = () => {
     if (location.pathname !== "/") {
       // If not on homepage, keep the styling consistent
       setScrolledDown(true)
-      console.log(location.pathname)
       return
     } else {
-      console.log(location.pathname)
       setScrolledDown(false)
     }
 
@@ -61,7 +59,7 @@ export const Navbar = () => {
                 alt="SR Constructions"
               />
               <span
-                className={`text-xs whitespace-nowrap lg:text-[12px] font-medium lg:${
+                className={`text-xs whitespace-nowrap lg:text-[12px] font-semibold lg:${
                   scrolledDown ? "text-black" : "text-white"
                 } lg:group-hover:text-black`}
               >
@@ -101,7 +99,7 @@ export const Navbar = () => {
               to={link.to}
               className={`border-b-2 border-transparent hover:border-b-2 hover:border-highlight transition-all px-2 py-1 text-md whitespace-nowrap w-fit capitalize text-black lg:${
                 scrolledDown ? "text-black" : "text-white"
-              } lg:group-hover:text-black`}
+              } lg:group-hover:text-black font-semibold`}
               key={link.id}
               onClick={() => setOpen(false)}
             >

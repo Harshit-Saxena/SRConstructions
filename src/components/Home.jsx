@@ -30,7 +30,7 @@ const Home = () => {
       <Work />
 
       <button
-        className="fixed bottom-6 right-6 w-14 h-14 bg-white text-blue-600 rounded-full shadow-lg flex items-center justify-center z-30 transform hover:scale-110 hover:bg-blue-600 hover:text-white hover:shadow-2xl transition-all"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center z-30 transform hover:scale-110 hover:bg-highlight hover:text-white hover:shadow-2xl transition-all"
         onClick={() => {
           window.scrollTo({
             top: 0,
@@ -411,6 +411,14 @@ const Stats = () => {
     <div className="bg-neutral-900 h-screen flex flex-col items-center justify-center gap-12 p-4">
       <h3 className="uppercase text-3xl lg:text-6xl text-center text-highlight">
         our <span className="font-semibold text-white">stats</span>{" "}
+        <div
+          className="w-56 md:w-80 lg:w-72 h-0.5 bg-highlight mt-2"
+          variants={{
+            hidden: { x: "100%", opacity: 0 },
+            visible: { x: "0", opacity: 1 },
+          }}
+          transition={{ delay: 0.5, duration: 0.4 }}
+        ></div>
       </h3>
 
       <div className="flex flex-col gap-4 justify-evenly items-center">
@@ -609,13 +617,12 @@ const Service = () => {
 
 // Founder section
 const Founder = () => {
-  // Define variants for container and children
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5, // Delay between animations of children
+        staggerChildren: 0.5,
       },
     },
   }
@@ -633,7 +640,7 @@ const Founder = () => {
       className="flex flex-col gap-6 px-6 lg:py-8 lg:px-36 overflow-hidden"
     >
       <motion.div
-        className="flex items-center lg:flex-row gap-2"
+        className="flex items-center lg:flex-row gap-1"
         variants={{
           hidden: { y: 30, opacity: 0 },
           visible: { y: 0, opacity: 1 },
@@ -642,12 +649,12 @@ const Founder = () => {
       >
         <motion.h2
           variants={childVariants}
-          className="text-xs text-neutral-700 order-1 lg:order-2 uppercase font-semibold"
+          className="text-neutral-700 order-1 lg:order-2 uppercase font-semibold"
         >
           Our Founder
         </motion.h2>
         <motion.div
-          className="w-56 md:w-80 lg:w-72 order-2 lg:order-1 h-0.5 bg-boldClr"
+          className="w-44 md:w-80 lg:w-72 order-2 lg:order-1 h-0.5 bg-boldClr"
           variants={{
             hidden: { x: "100%", opacity: 0 },
             visible: { x: "0", opacity: 1 },
@@ -681,7 +688,7 @@ const Founder = () => {
             </motion.p>
           ))}
 
-          <button className="rounded bg-highlight hover:text-highlight hover:bg-white hover:border-highlight border-2 border-transparent  px-4 py-1 text-md text-white transition-colors w-fit">
+          <button className="rounded bg-highlight hover:text-highlight hover:bg-white hover:border-highlight border-2 border-transparent px-4 py-1 text-md text-white transition-colors w-fit">
             <a href="/contact">
               Learn more <FiArrowUpRight className="inline" />
             </a>
@@ -689,19 +696,17 @@ const Founder = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:flex-row-reverse gap-6 p-4 py-6 md:w-[50%] lg:w-[90%]">
+      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:items-stretch lg:justify-evenly lg:flex-row gap-6 px-4 lg:px-0 py-6 md:w-[50%] lg:w-[100%] lg:h-[30rem]">
         <motion.img
-          className="max-w-xs"
+          className="max-w-xs order-1 lg:order-2"
           src={founder_img}
           alt="Founder (Rajbeer)"
         />
 
-        <motion.div className="text-neutral-900 flex flex-col items-center lg:items-start gap-4">
-          <h4 className="text-3xl lg:text-4xl font-semibold w-fit">
-            Rajbeer Singh
-          </h4>
-          <p className="text-xl lg:text-2xl font-kalina">Founder</p>
-          <p className="text-md lg:text-lg">
+        <motion.div className="text-neutral-900 flex flex-col items-center lg:items-start gap-4 order-2 lg:order-1">
+          <h4 className="text-3xl lg:text-4xl font-semibold">Rajbeer Singh</h4>
+          <p className="text-xl lg:text-2xl lg:tracking-wider">Founder</p>
+          <p className="text-md lg:text-xl lg:max-w-[50ch] font-light lg:tracking-wider">
             In 2001, he founded S.R. Constructions, a company embodying his
             vision and core values of quality, innovation, and customer
             satisfaction. Since its inception, he has led the company with
