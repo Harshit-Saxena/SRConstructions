@@ -1,5 +1,4 @@
 import animation from "../animation"
-import { ReactLenis } from "lenis/dist/lenis-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
 import permits from "../assets/permit.webp"
@@ -696,17 +695,17 @@ const Founder = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:items-stretch lg:justify-evenly lg:flex-row gap-6 px-4 lg:px-0 py-6 md:w-[50%] lg:w-[100%] lg:h-[30rem]">
+      <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:items-stretch lg:justify-evenly lg:flex-row gap-6 px-4 xl:px-0 py-6 md:w-[50%] lg:w-[100%] lg:h-[30rem]">
         <motion.img
           className="max-w-xs order-1 lg:order-2"
           src={founder_img}
           alt="Founder (Rajbeer)"
         />
 
-        <motion.div className="text-neutral-900 flex flex-col items-center lg:items-start gap-4 order-2 lg:order-1">
-          <h4 className="text-3xl lg:text-4xl font-semibold">Rajbeer Singh</h4>
+        <motion.div className="text-neutral-900 flex flex-col items-center lg:items-start gap-4 order-2 lg:order-1 lg:mt-12">
+          <h4 className="text-3xl lg:text-4xl font-semibold uppercase">Rajbeer Singh</h4>
           <p className="text-xl lg:text-2xl lg:tracking-wider">Founder</p>
-          <p className="text-md lg:text-xl lg:max-w-[50ch] font-light lg:tracking-wider">
+          <p className="text-md lg:text-xl lg:max-w-[45ch] font-light lg:tracking-wider">
             In 2001, he founded S.R. Constructions, a company embodying his
             vision and core values of quality, innovation, and customer
             satisfaction. Since its inception, he has led the company with

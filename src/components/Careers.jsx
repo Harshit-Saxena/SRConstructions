@@ -25,6 +25,7 @@ export const Careers = () => {
       desc: "Step into the office and discover a workplace designed to inspire and rejuvenate every day. At S.R. Constructions, beauty isn't just outside—it's the energy and care woven into every corner.",
     },
   ]
+
   return (
     <section className="">
       <div
@@ -249,7 +250,7 @@ const ContactForm = () => {
                   First Name <span className="text-red-500">*</span>
                 </label>
                 <input
-                  className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutral-700"
+                  className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutral-700 placeholder:text-neutral-300"
                   placeholder="abc"
                   autoComplete="off"
                   type="text"
@@ -269,7 +270,7 @@ const ContactForm = () => {
                   Last Name <span className="text-red-500">*</span>
                 </label>
                 <input
-                  className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutra-700"
+                  className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
                   placeholder="xyz"
                   autoComplete="off"
                   type="text"
@@ -288,7 +289,7 @@ const ContactForm = () => {
                 Email <span className="text-red-500">*</span>
               </label>
               <input
-                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
                 placeholder="you@email.com"
                 autoComplete="off"
                 type="email"
@@ -306,7 +307,7 @@ const ContactForm = () => {
                 Job Post <span className="text-red-500">*</span>
               </label>
               <select
-                className="border-2 bg-white capitalize border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+                className="border-2 bg-white capitalize border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
                 name="post"
                 value={formData.post}
                 onChange={handleChange}
@@ -333,7 +334,7 @@ const ContactForm = () => {
                 Phone Number <span className="text-red-500">*</span>
               </label>
               <input
-                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
                 placeholder="+91 9876543210"
                 autoComplete="off"
                 type="tel"
@@ -351,7 +352,7 @@ const ContactForm = () => {
                 Joining Time <span className="text-red-500">*</span>
               </label>
               <input
-                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
                 placeholder="Time period in days"
                 autoComplete="off"
                 type="number"
@@ -369,7 +370,7 @@ const ContactForm = () => {
                 Experience <span className="text-red-500">*</span>
               </label>
               <input
-                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
                 placeholder="Time period in years"
                 autoComplete="off"
                 type="number"
@@ -387,7 +388,7 @@ const ContactForm = () => {
                 Address <span className="text-red-500">*</span>
               </label>
               <input
-                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+                className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
                 placeholder="#1234, Kalka, Haryana"
                 autoComplete="off"
                 type="address"
@@ -405,7 +406,7 @@ const ContactForm = () => {
                 Need to Relocate? <span className="text-red-500">*</span>
               </label>
               <select
-                className="border-2 bg-white capitalize border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+                className="border-2 bg-white capitalize border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
                 name="relocate"
                 value={formData.relocate}
                 onChange={handleChange}

@@ -6,6 +6,7 @@ import Home from "./components/Home"
 import AboutUs from "./components/AboutUs"
 import ContactUs from "./components/ContactUs"
 import Services from "./components/Services"
+import Proprietor from "./components/Proprietor"
 import { AnimatePresence } from "framer-motion"
 import { Projects } from "./components/Projects"
 import { useEffect } from "react"
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/proprietor" element={<Proprietor />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </AnimatePresence>

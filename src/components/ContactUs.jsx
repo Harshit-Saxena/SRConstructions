@@ -133,7 +133,7 @@ const ContactForm = () => {
               First Name <span className="text-red-500">*</span>
             </label>
             <input
-              className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutral-700"
+              className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutral-700 placeholder:text-neutral-300"
               placeholder="abc"
               autoComplete="off"
               type="text"
@@ -151,7 +151,7 @@ const ContactForm = () => {
               Last Name <span className="text-red-500">*</span>
             </label>
             <input
-              className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutra-700"
+              className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none capitalize px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
               placeholder="xyz"
               autoComplete="off"
               type="text"
@@ -170,7 +170,7 @@ const ContactForm = () => {
             Email <span className="text-red-500">*</span>
           </label>
           <input
-            className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+            className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
             placeholder="you@email.com"
             autoComplete="off"
             type="email"
@@ -188,7 +188,7 @@ const ContactForm = () => {
             Service <span className="text-red-500">*</span>
           </label>
           <select
-            className="border-2 bg-white capitalize border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+            className="border-2 bg-white capitalize border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
             name="service"
             value={formData.service}
             onChange={handleChange}
@@ -215,7 +215,7 @@ const ContactForm = () => {
             Phone Number <span className="text-red-500">*</span>
           </label>
           <input
-            className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700"
+            className="border-2 border-neutral-200 focus:border-neutral-400 transition-all rounded-lg outline-none px-2 py-1 text-center text-neutra-700 placeholder:text-neutral-300"
             placeholder="+91 9876543210"
             autoComplete="off"
             type="tel"

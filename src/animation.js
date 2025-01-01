@@ -11,7 +11,7 @@ const animation = (OgComponent) => {
         motion.div,
         {
           className:
-            "slide-in z-[999] flex flex-col items-center justify-center",
+            "slide-in z-[12001] flex flex-col items-center justify-center",
           initial: { scaleX: 0 },
           animate: { scaleX: 0 },
           exit: { scaleX: 1 },
