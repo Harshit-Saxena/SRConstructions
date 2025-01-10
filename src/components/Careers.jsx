@@ -1,11 +1,12 @@
 import { useState } from "react"
-import animation from "../animation"
-import { FaBriefcase } from "react-icons/fa"
-import Swal from "sweetalert2"
 import { FaHeart } from "react-icons/fa"
 import { FaBuilding } from "react-icons/fa"
 import { FiArrowUpRight } from "react-icons/fi"
+import { FaBriefcase } from "react-icons/fa"
+import animation from "../animation"
+import Swal from "sweetalert2"
 import emailjs from "emailjs-com"
+import career from "../assets/career.jpg"
 
 export const Careers = () => {
   const benefits = [
@@ -78,7 +79,7 @@ export const Careers = () => {
               <h4 className="font-semibold text-3xl tracking-wide text-highlight">
                 {benefit.title}
               </h4>
-              <p className="text-gray-500 text-xs md:text-sm">{benefit.desc}</p>
+              <p className="text-gray-500 text-sm">{benefit.desc}</p>
             </div>
           )
         })}
@@ -241,7 +242,7 @@ const ContactForm = () => {
   return (
     <div className="flex flex-col gap-6 w-fit rounded-xl bg-white shadow-2xl overflow-hidden">
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-        <div className="flex flex-col-reverse xl:flex-row gap-2">
+        <div className="flex flex-col-reverse xl:flex-row-reverse gap-2">
           {/* question div */}
           <div className="flex flex-col gap-4 p-4">
             <div className="flex flex-col lg:flex-row gap-2 md:gap-6">
@@ -434,7 +435,7 @@ const ContactForm = () => {
 
           <div className="overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1565383690591-1ee1b6582cef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8am9iJTIwZm9ybXxlbnwwfHwwfHx8MA%3D%3D"
+              src={career}
               alt="Image"
               className="hover:scale-110 transition-all duration-700 h-full w-full"
             />

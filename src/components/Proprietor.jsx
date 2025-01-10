@@ -23,20 +23,52 @@ const Proprietor = () => {
         </div>
       </div>
 
-      <div className="mt-12 md:mt-16 lg:mt-20 bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:justify-center lg:items-stretch lg:flex-row gap-6 lg:gap-12 px-4 xl:px-0 py-6 lg:h-[30rem]">
-        <img className="max-w-xs border-4 border-black" src={founder_img} alt="Founder (Rajbeer)" />
+      <div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:justify-center lg:items-stretch lg:flex-row gap-6 lg:gap-12 px-4 xl:px-0 py-6 lg:h-[37rem]">
+        <img
+          className="mt-12 md:mt-16 lg:mt-20 max-w-xs border-4 border-black"
+          src={founder_img}
+          alt="Founder (Rajbeer)"
+        />
 
-        <div className="text-neutral-900 flex flex-col items-center lg:items-start gap-4 lg:mt-12">
-          <h4 className="text-3xl lg:text-4xl font-semibold uppercase">
-            Rajbeer Singh
-          </h4>
-          <p className="text-xl lg:text-2xl lg:tracking-wider">Founder</p>
-          <p className="text-md lg:text-xl lg:max-w-[45ch] font-light lg:tracking-wider">
-            In 2001, he founded S.R. Constructions, a company embodying his
-            vision and core values of quality, innovation, and customer
-            satisfaction. Since its inception, he has led the company with
-            unwavering dedication and passion, consistently delivering
-            exceptional results for clients
+        <div className="mt-12 md:mt-16 lg:mt-20 text-neutral-900 flex flex-col items-center lg:items-start gap-4">
+          <p className="text-md lg:text-lg lg:max-w-[65ch] font-light text-neutral-700">
+            <span className="text-highlight font-semibold text-xl">
+              Mr. Rajber Singh (Founder)
+            </span>{" "}
+            started his engineering career way back in 1992 as a field engineer
+            in Jaypee industries, a leading industrial giant at that time where
+            he worked for three years on various projects, including the{" "}
+            <span className="text-highlight">LAKYA DAM in Karnataka</span>,
+            which is one of the largest earth dams in Asia.
+          </p>
+
+          <p className="text-md lg:text-lg lg:max-w-[65ch] font-light text-neutral-700">
+            He then joined{" "}
+            <span className="text-highlight">Naiyyer Construction</span> Company
+            in 1996, where he excelled at the execution of industrial
+            engineering projects, such as factories, warehouses and power
+            plants.
+          </p>
+
+          <p className="text-md lg:text-lg lg:max-w-[65ch] font-light text-neutral-700">
+            He moved to{" "}
+            <span className="text-highlight">Singla Construction</span> Company
+            in 1997 and worked there until 2000, where he mastered his skills in
+            the residential sector and was involved in the execution of several
+            projects related to complexes, societies and flats.
+          </p>
+
+          <p className="text-md lg:text-lg lg:max-w-[65ch] font-light text-neutral-700">
+            It was in 2001, when he founded{" "}
+            <span className="text-highlight font-semibold">
+              S.R CONSTRUCTIONS
+            </span>
+            , a company that reflects his vision and values of quality,
+            innovation and customer satisfaction. Since then, he has been
+            leading the company with dedication and passion, delivering
+            outstanding results for the clients. Under his leadership, the
+            company has grown to become one of the most reputed and trusted
+            names in the construction industry
           </p>
         </div>
       </div>

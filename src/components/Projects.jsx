@@ -8,8 +8,9 @@ import "react-vertical-timeline-component/style.min.css"
 import { motion } from "framer-motion"
 import SteelBird from "../assets/SteelBird.webp"
 import cipla from "../assets/cipla.png"
+import animation from "../animation"
 
-export const Projects = () => {
+const Projects = () => {
   return (
     <motion.div
       style={{ paddingTop: "75px" }}
@@ -218,3 +219,5 @@ export const Projects = () => {
     </motion.div>
   )
 }
+
+export default animation(Projects)

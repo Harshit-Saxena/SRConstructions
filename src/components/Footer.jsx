@@ -51,39 +51,32 @@ export const Footer = () => {
             </Link>
           </div>
 
-          {/* TODO: Add social links for company */}
           {/* socials */}
           <div className="flex gap-6 justify-between">
             <div className="flex items-center gap-6">
               <Tooltip title="Instagram" arrow>
-                <a href="#" target="_blank">
-                  <img
-                    className="max-w-5"
-                    loading="lazy"
-                    src={insta}
-                    alt="Instagram"
-                  />
-                </a>
+                <img
+                  className="max-w-5"
+                  loading="lazy"
+                  src={insta}
+                  alt="Instagram"
+                />
               </Tooltip>
               <Tooltip title="Facebook" arrow>
-                <a href="#" target="_blank">
-                  <img
-                    className="max-w-7"
-                    loading="lazy"
-                    src={fb}
-                    alt="Facebook"
-                  />
-                </a>
+                <img
+                  className="max-w-7"
+                  loading="lazy"
+                  src={fb}
+                  alt="Facebook"
+                />
               </Tooltip>
               <Tooltip title="Google" arrow>
-                <a href="#" target="_blank">
-                  <img
-                    className="max-w-5"
-                    loading="lazy"
-                    src={google}
-                    alt="Google"
-                  />
-                </a>
+                <img
+                  className="max-w-5"
+                  loading="lazy"
+                  src={google}
+                  alt="Google"
+                />
               </Tooltip>
             </div>
           </div>
@@ -91,7 +84,9 @@ export const Footer = () => {
 
         {/* middle div */}
         <div className="grid grid-cols-1 place-items-center gap-4 font-Sora">
-          <p className="capitalize text-neutral-800 font-semibold">our services</p>
+          <p className="capitalize text-neutral-800 font-semibold">
+            our services
+          </p>
           <div className="flex flex-row gap-8 text-white">
             <ul className="grid grid-cols-1 gap-4">
               <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">

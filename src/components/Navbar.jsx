@@ -61,7 +61,7 @@ export const Navbar = () => {
               <span
                 className={`text-xs whitespace-nowrap lg:text-[12px] lg:text-white font-semibold lg:${
                   scrolledDown ? "text-black" : "text-white"
-                } lg:group-hover:text-black`}
+                } lg:group-hover:text-black transition-all duration-300`}
               >
                 S.R. Constructions
               </span>

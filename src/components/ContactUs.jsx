@@ -287,12 +287,12 @@ const ContactAndMap = () => {
           contact us
         </p>
         <div className="grid grid-cols-1 gap-2 lg:text-start lg:grid-cols-2">
-          <h2 className="text-4xl lg:text-7xl font-Kalina text-highlight">
+          <h2 className="text-4xl lg:text-5xl font-Kalina text-highlight">
             Get in touch
           </h2>
 
           <div className="grid grid-cols-1 gap-4 md:max-w-[55ch] lg:max-w-[75ch]">
-            <p className="text-xs md:text-base lg:text-lg text-neutral-500">
+            <p className="text-xs md:text-base lg:text-lg text-neutral-700">
               Whether you are ready to get started or simply have a question, we
               are here to assist you. Connect with us anytime!
             </p>

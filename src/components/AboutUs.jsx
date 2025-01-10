@@ -3,12 +3,15 @@ import React, { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { FiArrowUpRight } from "react-icons/fi"
 import { FiArrowRight } from "react-icons/fi"
+import buildForUs from "../assets/buildForUs.jpg"
+import neverCompro from "../assets/neverCompro.jpg"
+import dressForBest from "../assets/dressForBest.jpg"
 
 const AboutUs = () => {
   return (
     <div className="bg-white" style={{ paddingTop: "75px" }}>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgUrl={buildForUs}
         subheading="Collaborate"
         heading="Built for all of us."
       >
@@ -19,7 +22,7 @@ const AboutUs = () => {
         />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgUrl={neverCompro}
         subheading="Quality"
         heading="Never compromise."
       >
@@ -30,7 +33,7 @@ const AboutUs = () => {
         />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgUrl={dressForBest}
         subheading="Modern"
         heading="Dress for the best."
       >
@@ -164,7 +167,7 @@ const ExampleContent = (props) => (
       <p className="mb-4 text-lg text-neutral-600 md:text-xl">
         {props.subHeading2}
       </p>
-      <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
+      <button className="w-full rounded bg-highlight hover:text-highlight hover:bg-white hover:border-highlight border-2 border-transparent px-4 py-1 text-md text-white transition-colors md:w-fit">
         <a href="/contact">
           Learn more <FiArrowUpRight className="inline" />
         </a>

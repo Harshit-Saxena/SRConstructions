@@ -14,7 +14,6 @@ import AnimatedSlides from "./AnimatedSlides"
 const Home = () => {
   return (
     <div className="bg-bgClr flex flex-col gap-6">
-      {/* <ShuffleHero /> */}
 
       <AnimatedSlides />
 
@@ -442,9 +441,11 @@ const Stats = () => {
       </div>
 
       <div className="flex flex-col gap-3 items-center cursor-pointer">
-        <p className="uppercase bg-gray-100 text-[#00502f] font-light text-xs lg:text-base px-4 py-3 hover:text-gray-100 hover:bg-[#00502f] transition-all duration-300">
-          <a href="#work">Ready to work together?</a>
-        </p>
+        <a href="#work">
+          <p className="uppercase bg-gray-100 text-[#00502f] font-light text-xs lg:text-base px-4 py-3 hover:text-gray-100 hover:bg-[#00502f] transition-all duration-300">
+            Ready to work together?
+          </p>
+        </a>
       </div>
     </div>
   )
@@ -703,7 +704,9 @@ const Founder = () => {
         />
 
         <motion.div className="text-neutral-900 flex flex-col items-center lg:items-start gap-4 order-2 lg:order-1 lg:mt-12">
-          <h4 className="text-3xl lg:text-4xl font-semibold uppercase">Rajbeer Singh</h4>
+          <h4 className="text-3xl lg:text-4xl font-semibold uppercase">
+            Rajbeer Singh
+          </h4>
           <p className="text-xl lg:text-2xl lg:tracking-wider">Founder</p>
           <p className="text-md lg:text-xl lg:max-w-[45ch] font-light lg:tracking-wider">
             In 2001, he founded S.R. Constructions, a company embodying his
