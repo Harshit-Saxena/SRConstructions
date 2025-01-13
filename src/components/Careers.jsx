@@ -182,11 +182,11 @@ const ContactForm = () => {
     setMessage("")
 
     const serviceID = import.meta.env.VITE_serviceID
-    const templateID = import.meta.env.VITE_jobTemplateID
+    const jobTemplateID = import.meta.env.VITE_jobTemplateID
     const userID = import.meta.env.VITE_publicValue
 
     emailjs
-      .send(serviceID, templateID, formData, userID)
+      .send(serviceID, jobTemplateID, formData, userID)
       .then(
         (response) => {
           setLoading(true)
