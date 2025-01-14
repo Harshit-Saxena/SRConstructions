@@ -97,7 +97,7 @@ export const Navbar = () => {
           {navItems.map((link) => (
             <Link
               to={link.to}
-              className={`border-b-2 border-transparent hover:border-b-2 hover:border-highlight transition-all px-2 py-1 text-md whitespace-nowrap w-fit capitalize text-black lg:${
+              className={`border-b-2 border-transparent hover:border-b-2 hover:border-highlight transition-all px-2 py-1 text-md whitespace-nowrap w-auto capitalize text-black lg:${
                 scrolledDown ? "text-black" : "text-white"
               } lg:group-hover:text-black font-semibold`}
               key={link.id}

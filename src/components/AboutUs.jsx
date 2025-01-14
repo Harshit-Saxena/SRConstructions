@@ -167,7 +167,7 @@ const ExampleContent = (props) => (
       <p className="mb-4 text-lg text-neutral-600 md:text-xl">
         {props.subHeading2}
       </p>
-      <button className="w-full rounded bg-highlight hover:text-highlight hover:bg-white hover:border-highlight border-2 border-transparent px-4 py-1 text-md text-white transition-colors md:w-fit">
+      <button className="w-fit rounded bg-highlight hover:text-highlight hover:bg-white hover:border-highlight border-2 border-transparent px-4 py-1 text-md text-white transition-colors">
         <a href="/contact">
           Learn more <FiArrowUpRight className="inline" />
         </a>
