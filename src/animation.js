@@ -18,7 +18,7 @@ const animation = (OgComponent) => {
           transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
         },
         React.createElement("img", {
-          src: "/src/assets/logo.svg",
+          src: "https://i.postimg.cc/6pD8LXK6/logo.png",
           alt: "S.R. Construction",
           className: "w-24 h-24 mb-2",
         }),
