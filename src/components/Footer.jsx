@@ -24,13 +24,26 @@ export const Footer = () => {
       detail: "Srconstructions253@gmail.com",
       className: "w-6 wtext-primary-purple",
       href: "mailto:Srconstructions253@gmail.com",
-    },
+    },96466 30883‬
     {
       src: call,
       detail: "+91 99152-84762",
       className: "w-6 wtext-primary-purple",
       href: "tel:+9915284762",
+    }, 
+    {
+      src: call,
+      detail: "+91 96466-30883‬",
+      className: "w-6 wtext-primary-purple",
+      href: "tel:+9646630883‬",
     },
+    {
+      src: call,
+      detail: "+91 6284-351788‬‬",
+      className: "w-6 wtext-primary-purple",
+      href: "tel:+6284351788‬‬",
+    },
+        
   ]
 
   return (
