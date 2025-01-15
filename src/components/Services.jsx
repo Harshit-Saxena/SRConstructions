@@ -121,7 +121,7 @@ const Services = () => {
 
 const ServicePageDiv = ({ img, service, mobileDetail, order }) => {
   return (
-    <div className="flex flex-col lg:flex-row gap-8 lg:gap-30 p-4">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-30 p-4 group">
       <div className="overflow-hidden rounded-2xl">
         <img
           loading="lazy"
@@ -133,7 +133,7 @@ const ServicePageDiv = ({ img, service, mobileDetail, order }) => {
       <div
         className={`flex flex-col gap-4 justify-start items-center text-center lg:text-start lg:items-start font-Vietnam ${order}`}
       >
-        <p className="font-Vietnam font-medium uppercase text-xl lg:text-2xl lg:tracking-wide">
+        <p className="font-Vietnam font-medium uppercase text-xl lg:text-2xl lg:tracking-wide group-hover:text-highlight transition-all duration-500">
           {service}
         </p>
         <p className="text-sm md:text-base max-w-[50ch] xl:max-w-[45ch] text-neutral-700">

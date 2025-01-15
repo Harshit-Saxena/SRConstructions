@@ -31,6 +31,18 @@ export const Footer = () => {
       className: "w-6 wtext-primary-purple",
       href: "tel:+9915284762",
     },
+    {
+      src: call,
+      detail: "+91 96466-30883",
+      className: "w-6 wtext-primary-purple",
+      href: "tel:+9646630883",
+    },
+    {
+      src: call,
+      detail: "+91 6284-351788",
+      className: "w-6 wtext-primary-purple",
+      href: "tel:+6284351788",
+    },
   ]
 
   return (
@@ -131,12 +143,12 @@ export const Footer = () => {
               <div className="grid grid-cols-1 gap-2 xl:grid-cols-2 xl:gap-12 place-items-center xl:place-items-start">
                 <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
-                    Roofing and Siding
+                    Landscaping and Fencing
                   </li>
                 </Link>
                 <Link to={"/contact"}>
                   <li className="whitespace-nowrap text-xs text-neutral-800 hover:text-highlight transition-all duration-200">
-                    Landscaping and Fencing
+                    Roofing and Siding
                   </li>
                 </Link>
               </div>
