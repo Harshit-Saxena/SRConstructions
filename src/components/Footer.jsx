@@ -24,7 +24,7 @@ export const Footer = () => {
       detail: "Srconstructions253@gmail.com",
       className: "w-6 wtext-primary-purple",
       href: "mailto:Srconstructions253@gmail.com",
-    },96466 30883‬
+    },
     {
       src: call,
       detail: "+91 99152-84762",
