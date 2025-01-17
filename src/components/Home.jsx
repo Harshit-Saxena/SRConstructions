@@ -698,7 +698,7 @@ const Founder = () => {
 
       <motion.div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:items-stretch lg:justify-evenly lg:flex-row gap-6 px-4 xl:px-0 py-6 md:w-[50%] lg:w-[100%] lg:h-[30rem]">
         <motion.img
-          className="max-w-xs order-1 lg:order-2"
+          className="max-w-xs rounded-full order-1 lg:order-2"
           src={founder_img}
           alt="Founder (Rajbeer)"
         />

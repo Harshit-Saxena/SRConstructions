@@ -1,5 +1,5 @@
 import animation from "../animation"
-import founder_img from "../assets/Founder.png"
+import properitor_img from "../assets/Properitor.png"
 
 const Proprietor = () => {
   return (
@@ -25,8 +25,8 @@ const Proprietor = () => {
 
       <div className="bg-gray-100 rounded-md overflow-hidden flex flex-col self-center items-center lg:justify-center lg:items-stretch lg:flex-row gap-6 lg:gap-12 px-4 xl:px-0 py-6 lg:h-[37rem]">
         <img
-          className="mt-12 md:mt-16 lg:mt-20 max-w-xs border-4 border-black"
-          src={founder_img}
+          className="mt-12 md:mt-16 lg:mt-20 max-w-xs border-2 border-black"
+          src={properitor_img}
           alt="Founder (Rajbeer)"
         />
 
