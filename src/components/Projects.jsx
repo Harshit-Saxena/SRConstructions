@@ -7,20 +7,178 @@ import {
 import "react-vertical-timeline-component/style.min.css"
 import { motion } from "framer-motion"
 import SteelBird from "../assets/SteelBird.webp"
+import GujarBhawan from "../assets/gujarBhawan.jpg"
+import complexes from "../assets/complexes.jpg"
+import flats from "../assets/flats.jpg"
+import columbus from "../assets/columbus.jpg"
+import alliance from "../assets/alliance.jpg"
+import prosperity from "../assets/prosperity.jpg"
+import milestone from "../assets/milestone.jpg"
 import cipla from "../assets/cipla.png"
 import animation from "../animation"
 
 const Projects = () => {
   return (
     <motion.div
-      style={{ paddingTop: "75px" }}
+      style={{ paddingTop: "95px" }}
       className="px-2"
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
     >
+      <p className="bg-gray-100 mx-6 py-6 text-center my-4 text-highlight text-2xl lg:text-4xl">
+        Industrial Projects
+      </p>
       <VerticalTimeline lineColor="#71B706">
         <VerticalTimelineElement
-          contentStyle={{ borderRadius: "10px" }}
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
+          iconStyle={{ background: "#ffffff" }}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
+        >
+          <div className="overflow-hidden rounded-md">
+            <img
+              src={SteelBird}
+              className="hover:scale-110 transition-all duration-500 w-full"
+              alt="SteelBird Helmets"
+            />
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            SteelBird Helmets
+          </p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
+          iconStyle={{ background: "#ffffff", color: "#fff" }}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
+        >
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={cipla}
+              className="hover:scale-110 transition-all duration-700 w-full"
+              alt="SteelBird Helmets"
+            />
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            Cipla Pharma
+          </p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
+          iconStyle={{ background: "#ffffff", color: "#fff" }}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
+        >
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={columbus}
+              className="hover:scale-110 transition-all duration-700 w-full"
+              alt="Columbus Shoes"
+            />
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            Columbus Shoes
+          </p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
+          iconStyle={{ background: "#ffffff", color: "#fff" }}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
+        >
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={alliance}
+              className="hover:scale-110 transition-all duration-700 lg:h-[25rem] w-full"
+              alt="Alliance biotech"
+            />
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            Alliance Biotech
+          </p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
+          iconStyle={{ background: "#ffffff", color: "#fff" }}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
+        >
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={prosperity}
+              className="hover:scale-110 transition-all duration-700 lg:h-[25rem] w-full"
+              alt="Prosperity 6 Pharma"
+            />
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            Prosperity 6 Pharma
+          </p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
+          iconStyle={{ background: "#ffffff", color: "#fff" }}
+          icon={
+            <FontAwesomeIcon
+              icon={faCircle}
+              size="xs"
+              style={{ color: "#74C0FC" }}
+            />
+          }
+        >
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={milestone}
+              className="hover:scale-110 transition-all duration-700 h-[13rem] lg:h-[20rem] w-full"
+              alt="Milestone Gears"
+            />
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            Milestone Gears
+          </p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
+        </VerticalTimelineElement>
+      </VerticalTimeline>
+      <p className="bg-gray-100 mx-6 py-6 text-center my-20 lg:my-36 text-highlight text-2xl lg:text-4xl ">
+        Residential / Commercial Projects
+      </p>
+      <VerticalTimeline lineColor="#71B706">
+        <VerticalTimelineElement
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
           //   contentArrowStyle={{ borderRight: "10px solid grey" }}
           iconStyle={{ background: "#ffffff" }}
           icon={
@@ -33,19 +191,19 @@ const Projects = () => {
         >
           <div className="overflow-hidden rounded-xl">
             <img
-              src={SteelBird}
-              className="hover:scale-110 transition-all duration-700"
-              alt="SteelBird Helmets"
+              src={GujarBhawan}
+              className="hover:scale-110 transition-all duration-700 lg:h-[30rem] w-full"
+              alt="Gurjar Bhawan"
             />
           </div>
           <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
-            SteelBird Helmets
+            Gurjar Bhawan
           </p>
-          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Panchkula</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
-          className="vertical-timeline-element--education"
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
           iconStyle={{ background: "#ffffff", color: "#fff" }}
           icon={
             <FontAwesomeIcon
@@ -55,23 +213,22 @@ const Projects = () => {
             />
           }
         >
-          {/* TODO: Add cipla pharma img */}
           <div className="overflow-hidden rounded-xl">
             <img
-              src={cipla}
-              className="hover:scale-110 transition-all duration-700"
-              alt="SteelBird Helmets"
+              src={complexes}
+              className="hover:scale-110 transition-all duration-700 lg:h-[35rem] w-full"
+              alt="Condominium developments"
             />
           </div>
           <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
-            Cipla Pharma
+            Condominium developments
           </p>
-          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Baddi</p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Noida</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          iconStyle={{ background: "#ffffff" }}
+          contentStyle={{ borderRadius: "10px", maxWidth: "40rem" }}
+          iconStyle={{ background: "#ffffff", color: "#fff" }}
           icon={
             <FontAwesomeIcon
               icon={faCircle}
@@ -80,113 +237,17 @@ const Projects = () => {
             />
           }
         >
-          <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
-            Project 3
-          </h3>
-          <p className="text-lg vertical-timeline-element-subtitle">
-            Lorem ipsum dolor sit amet.
-          </p>
-          <p className="">Lorem ipsum dolor sit amet.</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          iconStyle={{ background: "#ffffff" }}
-          icon={
-            <FontAwesomeIcon
-              icon={faCircle}
-              size="xs"
-              style={{ color: "#74C0FC" }}
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src={flats}
+              className="hover:scale-110 transition-all duration-700 lg:h-[35rem] w-full"
+              alt="Apartments"
             />
-          }
-        >
-          <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
-            Project 4
-          </h3>
-          <p className="text-lg vertical-timeline-element-subtitle">
-            Lorem ipsum dolor sit amet.
+          </div>
+          <p style={{ fontSize: "1.3rem", fontWeight: 400, color: "#fc6f03" }}>
+            Apartments
           </p>
-          <p className="">College</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          iconStyle={{ background: "#ffffff" }}
-          icon={
-            <FontAwesomeIcon
-              icon={faCircle}
-              size="xs"
-              style={{ color: "#74C0FC" }}
-            />
-          }
-        >
-          <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
-            Project 5
-          </h3>
-          <p className="text-lg vertical-timeline-element-subtitle">
-            Lorem ipsum dolor sit amet.
-          </p>
-          <p className="">College</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          iconStyle={{ background: "#ffffff" }}
-          icon={
-            <FontAwesomeIcon
-              icon={faCircle}
-              size="xs"
-              style={{ color: "#74C0FC" }}
-            />
-          }
-        >
-          <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
-            Project 6
-          </h3>
-          <p className="text-lg vertical-timeline-element-subtitle">
-            Lorem ipsum dolor sit amet.
-          </p>
-          <p className="">Lorem ipsum dolor sit amet.</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          iconStyle={{ background: "#ffffff" }}
-          icon={
-            <FontAwesomeIcon
-              icon={faCircle}
-              size="xs"
-              style={{ color: "#74C0FC" }}
-            />
-          }
-        >
-          <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
-            Project 7
-          </h3>
-          <p className="text-lg vertical-timeline-element-subtitle">
-            Lorem ipsum dolor sit amet.
-          </p>
-          <p className="">Lorem ipsum dolor sit amet.</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          iconStyle={{ background: "#ffffff", color: "red" }}
-          icon={
-            <FontAwesomeIcon
-              icon={faCircle}
-              size="xs"
-              style={{ color: "#74C0FC" }}
-            />
-          }
-        >
-          <h3 className="font-bold text-xl lg:text-2xl vertical-timeline-element-title">
-            Project 8
-          </h3>
-          <p className="text-lg vertical-timeline-element-subtitle">
-            Lorem ipsum dolor sit amet.
-          </p>
-          <p className="">Lorem ipsum dolor sit amet.</p>
+          <p style={{ marginTop: "-4px", color: "lightgrey" }}>Noida</p>
         </VerticalTimelineElement>
       </VerticalTimeline>
 
