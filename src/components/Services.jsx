@@ -133,8 +133,9 @@ const ServicePageDiv = ({ img, service, mobileDetail, order }) => {
       <div
         className={`flex flex-col gap-4 justify-start items-center text-center lg:text-start lg:items-start font-Vietnam ${order}`}
       >
-        <p className="font-Vietnam font-medium uppercase text-xl lg:text-2xl lg:tracking-wide group-hover:text-highlight transition-all duration-500">
+        <p className="font-Vietnam font-medium uppercase text-xl lg:text-2xl lg:tracking-wide relative group-hover:text-highlight transition-all duration-500">
           {service}
+          <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-500 group-hover:w-full"></span>
         </p>
         <p className="text-sm md:text-base max-w-[50ch] xl:max-w-[45ch] text-neutral-700">
           {mobileDetail}

@@ -14,7 +14,6 @@ import AnimatedSlides from "./AnimatedSlides"
 const Home = () => {
   return (
     <div className="bg-bgClr flex flex-col gap-6">
-
       <AnimatedSlides />
 
       <About />
@@ -739,16 +738,16 @@ const Work = () => {
         </p>
         {/* buttons */}
         <div className="flex flex-col lg:flex-row gap-4">
-          <button className="text-[#00502f] bg-gray-50 hover:bg-[#00502f] hover:text-gray-100 transition-all duration-200 px-6 py-3">
-            <Link className="uppercase font-medium" to={"/contact"}>
+          <Link className="uppercase font-medium" to={"/contact"}>
+            <button className="text-[#00502f] bg-gray-50 hover:bg-[#00502f] hover:text-gray-100 transition-all duration-200 px-6 py-3">
               Build a project with us
-            </Link>
-          </button>
-          <button className="text-[#00502f] bg-gray-50 hover:bg-[#00502f] hover:text-gray-100 transition-all duration-200 px-4 py-3">
-            <Link className="uppercase font-medium" to={"/careers"}>
+            </button>
+          </Link>
+          <Link className="uppercase font-medium" to={"/careers"}>
+            <button className="text-[#00502f] bg-gray-50 hover:bg-[#00502f] hover:text-gray-100 transition-all duration-200 px-4 py-3">
               Build a career with us
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </section>
