@@ -33,7 +33,7 @@ const Proprietor = () => {
         <div className="mt-12 md:mt-16 lg:mt-20 text-neutral-900 flex flex-col items-center lg:items-start gap-4">
           <p className="text-md lg:text-lg lg:max-w-[65ch] font-light text-neutral-700">
             <span className="text-highlight font-semibold text-xl">
-              Mr. Rajber Singh (Founder)
+              Mr. Rajbeer Singh (Founder)
             </span>{" "}
             started his engineering career way back in 1992 as a field engineer
             in Jaypee industries, a leading industrial giant at that time where
